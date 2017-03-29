@@ -1,0 +1,12 @@
+name = "CORP Edition";
+picture = "corp_edition.paa";
+actionName = "www.corp-arma.fr";
+action = "https://www.corp-arma.fr";
+description = "Extensions pour la création de missions";
+logo = "corp_edition.paa";
+logoOver = "corp_edition.paa";
+tooltip = "CORP Edition";
+tooltipOwned = "CORP";
+overview = "Extensions pour la création de missions";
+author = "CORP";
+overviewPicture = "corp_edition.paa";
