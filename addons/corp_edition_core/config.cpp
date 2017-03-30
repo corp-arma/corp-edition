@@ -13,3 +13,5 @@ class CfgFactionClasses {
 		displayName = "CORP Modules";
 	};
 };
+
+#include "ui\base.hpp"
