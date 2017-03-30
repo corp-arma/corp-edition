@@ -30,4 +30,6 @@ class CfgFactionClasses {
 	};
 };
 
+class CfgCORP {};
+
 #include "ui\base.hpp"
