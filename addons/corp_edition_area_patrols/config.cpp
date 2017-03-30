@@ -11,7 +11,7 @@ class CfgFunctions {
 	class CORP {
 		tag = "CORP";
 
-		class CORPEdition {
+		class CORPEditionAreaPatrols {
 			file = "\corp_edition_area_patrols\functions";
 			class AreaPatrols_init {};
 			class AreaPatrols_createAreaPatrol {};
