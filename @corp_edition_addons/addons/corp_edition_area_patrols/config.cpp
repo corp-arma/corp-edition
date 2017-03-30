@@ -69,6 +69,14 @@ class CfgVehicles {
 				typeName = "NUMBER";
 				defaultValue = "4";
 			};
+
+			class Debug: Checkbox {
+				property = "CORP_Module_AreaPatrols_Debug";
+				displayName = "Débug";
+				description = "Sur carte, déssine les zones et les IA créées";
+				typeName = "BOOL";
+				defaultValue = "false";
+			};
 		};
 	};
 };
