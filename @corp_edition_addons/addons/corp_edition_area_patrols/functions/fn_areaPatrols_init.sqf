@@ -47,8 +47,6 @@ private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
 			_unitsResized pushBack (selectRandom _unitsFinal);
 		};
 
-		systemChat str _unitsResized;
-
 		_patrol = [_center, _area, _side, _unitsResized, _waypointsPerGroup] call CORP_fnc_areaPatrols_createAreaPatrol;
 	};
 } forEach _areas;
