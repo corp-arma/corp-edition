@@ -29,7 +29,7 @@ class CfgVehicles {
 		};
 
 		class ModuleDescription {
-			class AnyBrain;
+			class Anything;
 		};
 	};
 
