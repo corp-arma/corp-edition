@@ -1,4 +1,4 @@
-#include "ctrl.hpp"
+#include "ctrls.hpp"
 
 class BaseTitle;
 class BaseBackgroundBox;
