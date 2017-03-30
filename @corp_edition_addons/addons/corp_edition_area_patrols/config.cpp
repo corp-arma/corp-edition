@@ -24,13 +24,8 @@ class CfgVehicles {
 
 	class Module_F: Logic {
 		class AttributesBase {
-			class Default;
 			class Edit;
-			class Combo;
 			class Checkbox;
-			class CheckboxNumber;
-			class ModuleDescription;
-			class Units;
 		};
 
 		class ModuleDescription {
@@ -41,7 +36,7 @@ class CfgVehicles {
 	class CORP_Module_AreaPatrols: Module_F {
 		scope = 2;
 		displayName = "Area Patrols";
-		icon = "\corp_edition_area_patrols\icon_ca.paa";
+		icon = "\corp_edition_area_patrols\icon.paa";
 		category = "CORP_Modules";
 
 		function = "CORP_fnc_AreaPatrols_init";

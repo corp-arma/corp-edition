@@ -1,5 +1,5 @@
 name = "CORP Edition";
-picture = "corp_edition.paa";
+picture = "corp_edition_addons.paa";
 actionName = "www.corp-arma.fr";
 action = "https://www.corp-arma.fr";
 description = "Extensions pour la création de missions";
