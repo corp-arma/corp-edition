@@ -7,6 +7,7 @@ private _side				= side (_units select 0);
 private _groupsPerArea		= _logic getVariable ["GroupsPerArea", 4];
 private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
 private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
+private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
 
 // todo : ajouter des sortie en cas d'erreur sur les paramètres
@@ -119,6 +120,9 @@ if (_debug && {hasInterface}) then {
 		if (_debug) then {
 			CORP_var_areaPatrols_patrols pushBack _patrol;
 		};
+
+		// activation/désactivation de la simulation dynamique pour le groupe créé
+		_patrol enableDynamicSimulation _dynamicSimulation;
 	};
 } forEach _areas;
 

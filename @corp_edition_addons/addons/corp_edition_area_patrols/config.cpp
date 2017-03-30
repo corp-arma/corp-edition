@@ -70,6 +70,14 @@ class CfgVehicles {
 				defaultValue = "4";
 			};
 
+			class DynamicSimulation: Checkbox {
+				property = "CORP_Module_AreaPatrols_DynamicSimulation";
+				displayName = "Simulation dynamique";
+				description = "activer la Simulation Dynamique pour les groupes créés par le module";
+				typeName = "BOOL";
+				defaultValue = "true";
+			};
+
 			class Debug: Checkbox {
 				property = "CORP_Module_AreaPatrols_Debug";
 				displayName = "Débug";
