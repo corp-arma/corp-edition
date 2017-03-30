@@ -1,4 +1,4 @@
-#include "..\ui\ctrl.hpp"
+#include "..\ui\ctrls.hpp"
 
 [] spawn {
 	waitUntil {!isNull (findDisplay TELEPORT_DIALOG_IDD)};
