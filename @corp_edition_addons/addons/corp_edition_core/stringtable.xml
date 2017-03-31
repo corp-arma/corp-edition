@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+	<Package name="core">
+		<Container name="modules">
+
+			<Key ID="STR_CORP_ELLIPTICAL_AREA">
+				<Original>Elliptical area</Original>
+				<French>Zone éliptique</French>
+			</Key>
+
+			<Key ID="STR_CORP_RECTANGULAR_AREA">
+				<Original>Rectangular area</Original>
+				<French>Zone rectangulaire</French>
+			</Key>
+
+		</Container>
+	</Package>
+</Project>

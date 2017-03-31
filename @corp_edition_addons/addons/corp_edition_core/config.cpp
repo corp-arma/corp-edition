@@ -48,7 +48,7 @@ class CfgVehicles {
 	class CORP_Module_AreaEllipse: Module_F {
 		_generalMacro = "CORP_Module_AreaEllipse";
 		scope = 2;
-		displayName = "Zone éliptique";
+		displayName = $STR_CORP_ELLIPTICAL_AREA;
 		icon = "\corp_edition_core\icon_area_ellipse.paa";
 		category = "CORP_Modules";
 
@@ -66,7 +66,7 @@ class CfgVehicles {
 
 	class CORP_Module_AreaRectangle: CORP_Module_AreaEllipse {
 		_generalMacro = "CORP_Module_AreaRectangle";
-		displayName = "Zone rectangulaire";
+		displayName = $STR_CORP_RECTANGULAR_AREA;
 		icon = "\corp_edition_core\icon_area_rectangle.paa";
 
 		class AttributeValues {
