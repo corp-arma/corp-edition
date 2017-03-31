@@ -1,6 +1,6 @@
 class CfgPatches {
 	class CORP_Edition_Core {
-		units[] = {};
+		units[] = {"CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle"};
 		author = "CORP Modding Studio";
 		requiredVersion = 1.66;
 		requiredAddons[] = {};
@@ -20,6 +20,11 @@ class CfgFunctions {
 			file = "\corp_edition_core\functions\geometry";
 			class Centroid {};
 		};
+
+		class Misc {
+			file = "\corp_edition_core\functions\misc";
+			class FakeFunction {};
+		};
 	};
 };
 
@@ -27,6 +32,47 @@ class CfgFactionClasses {
 	class NO_CATEGORY;
 	class CORP_Modules: NO_CATEGORY {
 		displayName = "CORP Modules";
+	};
+};
+
+class CfgVehicles {
+	class Logic;
+	class Module_F: Logic {
+		class AttributesBase {};
+
+		class ModuleDescription {
+			class Anything;
+		};
+	};
+
+	class CORP_Module_AreaEllipse: Module_F {
+		_generalMacro = "CORP_Module_AreaEllipse";
+		scope = 2;
+		displayName = "Zone éliptique";
+		icon = "\corp_edition_area_patrols\icon.paa";
+		category = "CORP_Modules";
+
+		function = "CORP_fnc_fakeFunction";
+		isGlobal = 0;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		is3DEN = 0;
+
+		canSetArea = 1;
+		class AttributeValues {
+			size3[]={20, 20, -1};
+		};
+	};
+
+	class CORP_Module_AreaRectangle: CORP_Module_AreaEllipse {
+		_generalMacro = "CORP_Module_AreaRectangle";
+		displayName = "Zone rectangulaire";
+		icon = "\corp_edition_area_patrols\icon.paa";
+
+		class AttributeValues {
+			size3[] = {20, 20, -1};
+			isRectangle = 1;
+		};
 	};
 };
 
