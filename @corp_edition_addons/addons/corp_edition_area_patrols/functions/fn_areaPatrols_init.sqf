@@ -1,7 +1,7 @@
 private _logic				= param [0, objNull, [objNull]];
 private _units				= param [1, [], [[]]];
 private _unitsFinal			= [];
-private _triggers			= synchronizedObjects _logic;
+private _synched			= synchronizedObjects _logic;
 private _areas				= [];
 private _side				= side (_units select 0);
 private _groupsPerArea		= _logic getVariable ["GroupsPerArea", 4];
@@ -12,15 +12,14 @@ private _debug				= _logic getVariable ["Debug", false];
 
 // todo : ajouter des sortie en cas d'erreur sur les paramètres
 
-// pour chaque déclencheur synchronisé au module
+// pour chaque objet synchronisé au module (n'inclut pas les unités)
+// on vérifie si c'est un object de de type module de zone
+// si c'est le cas, on pouse l'objet dans le tableau de zones
 {
-	// on vérifie si la condition vaut true
-	// si c'est le cas, c'est une zone définie par l'éditeur
-	// on la pousse donc dans le tableau des zones
-	if (((triggerStatements _x) select 0) == "true") then {
+	if ((typeOf _x) in ["CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle"]) then {
 		_areas pushBack _x;
 	};
-} forEach _triggers;
+} forEach _synched;
 
 // on défini la couleur des zones en fonction du side des IA synchronisées
 private _areasColor = switch (_side) do {
@@ -78,7 +77,7 @@ if (_debug && {hasInterface}) then {
 
 	// on dessine les zones sur carte
 	{
-		private _area = triggerArea _x;
+		private _area = _x getvariable ["objectArea", [0, 0, 0, false, 0]];
 
 		private _marker = createMarker [format ["area_%1", _x], _x];
 		_marker setMarkerShape (["ELLIPSE", "RECTANGLE"] select (_area select 3));
@@ -106,7 +105,7 @@ if (_debug && {hasInterface}) then {
 // pour chaque zone on créé les patrouilles
 {
 	private _center	= getPosASL _x;
-	private _area	= triggerArea _x;
+	private _area	= _x getvariable ["objectArea", [0, 0, 0, false, 0]];;
 
 	for "_i" from 0 to (_groupsPerArea - 1) do {
 		private _unitsResized = [];
