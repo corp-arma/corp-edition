@@ -49,7 +49,7 @@ class CfgVehicles {
 		_generalMacro = "CORP_Module_AreaEllipse";
 		scope = 2;
 		displayName = "Zone éliptique";
-		icon = "\corp_edition_area_patrols\icon.paa";
+		icon = "\corp_edition_core\icon_area_ellipse.paa";
 		category = "CORP_Modules";
 
 		function = "CORP_fnc_fakeFunction";
@@ -67,7 +67,7 @@ class CfgVehicles {
 	class CORP_Module_AreaRectangle: CORP_Module_AreaEllipse {
 		_generalMacro = "CORP_Module_AreaRectangle";
 		displayName = "Zone rectangulaire";
-		icon = "\corp_edition_area_patrols\icon.paa";
+		icon = "\corp_edition_core\icon_area_rectangle.paa";
 
 		class AttributeValues {
 			size3[] = {20, 20, -1};
