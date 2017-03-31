@@ -59,8 +59,8 @@ if (_debug && {hasInterface}) then {
 						getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
 						_sideColor,
 						visiblePosition _x,
-						0.5 / ctrlMapScale (_this select 0),
-						0.5 / ctrlMapScale (_this select 0),
+						0.5 / ctrlMapScale _map,
+						0.5 / ctrlMapScale _map,
 						getDirVisual _x
 					];
 				} forEach (units _group);
