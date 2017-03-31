@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+	<Package name="paradrop">
+		<Container name="modules">
+
+			<Key ID="STR_CORP_PARADROP_DN">
+				<Original>Paradrop</Original>
+				<French>Saut en parachute</French>
+			</Key>
+
+		</Container>
+	</Package>
+</Project>

@@ -34,7 +34,7 @@ class CfgVehicles {
 
 	class CORP_Module_AreaPatrols: Module_F {
 		scope = 2;
-		displayName = "Area Patrols";
+		displayName = $STR_CORP_AREA_PATROLS_DN;
 		icon = "\corp_edition_area_patrols\icon.paa";
 		category = "CORP_Modules";
 
@@ -48,40 +48,40 @@ class CfgVehicles {
 		class Attributes: AttributesBase {
 			class GroupsPerArea: Edit {
 				property = "CORP_Module_AreaPatrols_GroupsPerArea";
-				displayName = "Nb. groupes/zone";
-				description = "Nombre de groupes par zone";
+				displayName = $STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DN;
+				description = $STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DESC;
 				typeName = "NUMBER";
 				defaultValue = "4";
 			};
 
 			class UnitsPerGroup: Edit {
 				property = "CORP_Module_AreaPatrols_UnitsPerGroup";
-				displayName = "Nb. unit&#233;s max/groupe";
-				description = "Nombre d'unit&#233;s max par groupe";
+				displayName = $STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DN;
+				description = $STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DESC;
 				typeName = "NUMBER";
 				defaultValue = "4";
 			};
 
 			class WaypointsPerGroup: Edit {
 				property = "CORP_Module_AreaPatrols_WaypointsPerGroup";
-				displayName = "Nb. points de passage/groupe";
-				description = "Nombre de points de passage par groupe";
+				displayName = $STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DN;
+				description = $STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DESC;
 				typeName = "NUMBER";
 				defaultValue = "4";
 			};
 
 			class DynamicSimulation: Checkbox {
 				property = "CORP_Module_AreaPatrols_DynamicSimulation";
-				displayName = "Simulation dynamique";
-				description = "activer la Simulation Dynamique pour les groupes créés par le module";
+				displayName = $STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DN;
+				description = $STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DESC;
 				typeName = "BOOL";
 				defaultValue = "true";
 			};
 
 			class Debug: Checkbox {
 				property = "CORP_Module_AreaPatrols_Debug";
-				displayName = "Débug";
-				description = "Sur carte, déssine les zones et les IA créées";
+				displayName = $STR_CORP_AREA_PATROLS_DEBUG_DN;
+				description = $STR_CORP_AREA_PATROLS_DEBUG_DESC;
 				typeName = "BOOL";
 				defaultValue = "false";
 			};

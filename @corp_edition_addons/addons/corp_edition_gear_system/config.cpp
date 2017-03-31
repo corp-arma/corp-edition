@@ -28,7 +28,7 @@ class CfgVehicles {
 
 	class CORP_Module_GearSystem: Module_F {
 		scope = 2;
-		displayName = "Équipement";
+		displayName = $STR_CORP_GEAR_SYSTEM_DN;
 		icon = "\corp_edition_gear_system\icon.paa";
 		category = "CORP_Modules";
 

@@ -31,8 +31,8 @@ class CfgVehicles {
 
 	class CORP_Module_Paradrop: Module_F {
 		scope = 2;
-		displayName = "Paradrop";
-		icon = "\corp_edition_paradrop\paradrop.paa";
+		displayName = $STR_CORP_PARADROP_DN;
+		icon = "\corp_edition_paradrop\icon.paa";
 		category = "CORP_Modules";
 
 		function = "CORP_fnc_paradrop_init";

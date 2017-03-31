@@ -5,7 +5,7 @@ private _objects	= param [1, [], [[]]];
 
 {
 	_x addAction [
-		"<t color='#ffffff'><img image='\corp_edition_spectator_cam\spectator.paa'/> Caméra spectateur</t>",
+		"<t color='#ffffff'><img image='\corp_edition_spectator_cam\icon.paa'/> Caméra spectateur</t>",
 		{
 			// création de la caméra spéctateur
 			["Initialize", [

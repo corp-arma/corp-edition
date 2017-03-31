@@ -5,7 +5,7 @@ private _objects	= param [1, [], [[]]];
 
 {
 	_x addAction [
-		"<t color='#ffffff'><img image='\corp_edition_teleport\teleport.paa'/> Téléportation</t>",
+		"<t color='#ffffff'><img image='\corp_edition_teleport\icon.paa'/> Téléportation</t>",
 		{ createDialog "CORP_TeleportDialog" },
 		nil,
 		100,

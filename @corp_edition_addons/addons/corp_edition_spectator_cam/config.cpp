@@ -28,7 +28,7 @@ class CfgVehicles {
 
 	class CORP_Module_SpectatorCam: Module_F {
 		scope = 2;
-		displayName = "Caméra spectateur";
+		displayName = $STR_CORP_SPECTATOR_CAM_DN;
 		icon = "\corp_edition_spectator_cam\icon.paa";
 		category = "CORP_Modules";
 

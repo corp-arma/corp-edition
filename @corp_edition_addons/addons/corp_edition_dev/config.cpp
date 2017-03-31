@@ -28,7 +28,7 @@ class CfgVehicles {
 
 	class CORP_Module_Dev: Module_F {
 		scope = 2;
-		displayName = "Développement";
+		displayName = $STR_CORP_DEV_DN;
 		icon = "\corp_edition_dev\icon.paa";
 		category = "CORP_Modules";
 

@@ -3,12 +3,12 @@
 	<Package name="core">
 		<Container name="modules">
 
-			<Key ID="STR_CORP_ELLIPTICAL_AREA">
+			<Key ID="STR_CORP_CORE_ELLIPTICAL_AREA_DN">
 				<Original>Elliptical area</Original>
 				<French>Zone éliptique</French>
 			</Key>
 
-			<Key ID="STR_CORP_RECTANGULAR_AREA">
+			<Key ID="STR_CORP_CORE_RECTANGULAR_AREA_DN">
 				<Original>Rectangular area</Original>
 				<French>Zone rectangulaire</French>
 			</Key>

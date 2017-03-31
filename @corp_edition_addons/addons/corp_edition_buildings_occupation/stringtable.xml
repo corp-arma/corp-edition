@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+	<Package name="buildings occupation">
+		<Container name="modules">
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DN">
+				<Original>Buildings occupation</Original>
+				<French>Occupation de bâtiments</French>
+			</Key>
+
+			<!-- units per area -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DN">
+				<Original>Number of units per area</Original>
+				<French>Nombre d'unités par zone</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DESC">
+				<Original>Number of units per area</Original>
+				<French>"Nombre d'unités par zone"</French>
+			</Key>
+
+			<!-- keep position -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DN">
+				<Original>Percentage of static units</Original>
+				<French>Pourcentage d'unités statiques</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC">
+				<Original>Percentage of units that keep its position</Original>
+				<French>Pourcentage d'unités qui reste en place</French>
+			</Key>
+
+			<!-- dynamic simulation -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DN">
+				<Original>Dynamic simulation</Original>
+				<French>Simulation dynamique</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DESC">
+				<Original>Enables dynamic simulation for created groups</Original>
+				<French>activer la Simulation Dynamique pour les groupes créés par le module</French>
+			</Key>
+
+			<!-- debug -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DN">
+				<Original>Debug</Original>
+				<French>Débug</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DESC">
+				<Original>Draws areas and AIs of map</Original>
+				<French>Sur carte, déssine les zones et les IA créées</French>
+			</Key>
+
+		</Container>
+	</Package>
+</Project>

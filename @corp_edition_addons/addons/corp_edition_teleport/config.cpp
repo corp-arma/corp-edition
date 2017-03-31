@@ -29,7 +29,7 @@ class CfgVehicles {
 
 	class CORP_Module_Teleport: Module_F {
 		scope = 2;
-		displayName = "Téléportation vers un cooéquiper";
+		displayName = $STR_CORP_TELEPORT_DN;
 		icon = "\corp_edition_teleport\icon.paa";
 		category = "CORP_Modules";
 

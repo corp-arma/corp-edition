@@ -34,8 +34,8 @@ class CfgVehicles {
 
 	class CORP_Module_BuildingsOccupation: Module_F {
 		scope = 2;
-		displayName = "Occupation des bâtiments";
-		icon = "\corp_edition_area_patrols\icon.paa";
+		displayName = $STR_CORP_BUILDINGS_OCCUPATION_DN;
+		icon = "\corp_edition_buildings_occupation\icon.paa";
 		category = "CORP_Modules";
 
 		function = "CORP_fnc_buildingsOccupation_init";
@@ -48,32 +48,32 @@ class CfgVehicles {
 		class Attributes: AttributesBase {
 			class UnitsPerArea: Edit {
 				property = "CORP_Module_BuildingsOccupation_UnitsPerArea";
-				displayName = "Nb. d'unités/zone";
-				description = "Nombre d'unités par zone";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DESC;
 				typeName = "NUMBER";
 				defaultValue = "10";
 			};
 
 			class KeepPosition: Edit {
 				property = "CORP_Module_BuildingsOccupation_KeepPosition";
-				displayName = "% d'unités statiques";
-				description = "Pourcentage d'unités qui reste en place";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC;
 				typeName = "NUMBER";
 				defaultValue = "0.5";
 			};
 
 			class DynamicSimulation: Checkbox {
 				property = "CORP_Module_BuildingsOccupation_DynamicSimulation";
-				displayName = "Simulation dynamique";
-				description = "activer la Simulation Dynamique pour les groupes créés par le module";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DESC;
 				typeName = "BOOL";
 				defaultValue = "true";
 			};
 
 			class Debug: Checkbox {
 				property = "CORP_Module_BuildingsOccupation_Debug";
-				displayName = "Débug";
-				description = "Sur carte, déssine les zones et les IA créées";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DESC;
 				typeName = "BOOL";
 				defaultValue = "false";
 			};
