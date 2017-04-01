@@ -59,7 +59,6 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 	_wp setWaypointSpeed "NORMAL";
 	_wp setWaypointCombatMode "RED";
 	_wp setWaypointCompletionRadius 3;
-	_unit setUnitPos "UP";
 
 	// si un poucentage d'unités fixes demandé
 	// on désactive la capacité de l'ia à chercher un chemin
