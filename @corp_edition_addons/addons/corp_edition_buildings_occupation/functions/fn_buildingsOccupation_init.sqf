@@ -1,8 +1,7 @@
 private _logic				= param [0, objNull, [objNull]];
 private _units				= param [1, [], [[]]];
 private _unitsFinal			= [];
-private _synched			= synchronizedObjects _logic;
-private _areas				= [];
+private _areas				= _logic call CORP_fnc_getSynchronizedAreas;
 private _side				= side (_units select 0);
 private _unitsPerArea		= _logic getVariable ["UnitsPerArea", 10];
 private _keepPosition		= _logic getVariable ["KeepPosition", 0.5];
@@ -10,15 +9,6 @@ private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
 
 // todo : ajouter des sortie en cas d'erreur sur les paramètres
-
-// pour chaque objet synchronisé au module (n'inclut pas les unités)
-// on vérifie si c'est un object de de type module de zone
-// si c'est le cas, on pouse l'objet dans le tableau de zones
-{
-	if ((typeOf _x) in ["CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle"]) then {
-		_areas pushBack _x;
-	};
-} forEach _synched;
 
 // on définit la couleur des zones en fonction du side des IA synchronisées
 private _areasColor = [_side, "STRING"] call CORP_fnc_getSideColor;
