@@ -1,16 +1,11 @@
 private _logic				= param [0, objNull, [objNull]];
 private _units				= param [1, [], [[]]];
-private _unitsFinal			= [];
 private _synched			= synchronizedObjects _logic;
-private _areas				= [];
-private _side				= side (_units select 0);
-private _groupsPerArea		= _logic getVariable ["GroupsPerArea", 4];
-private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
-private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
-private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
-private _debug				= _logic getVariable ["Debug", false];
 
-// todo : ajouter des sortie en cas d'erreur sur les paramètres
+// si aucune unité synchronisée, on quitte
+if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
+
+private _areas = [];
 
 // pour chaque objet synchronisé au module (n'inclut pas les unités)
 // on vérifie si c'est un object de de type module de zone
@@ -20,6 +15,18 @@ private _debug				= _logic getVariable ["Debug", false];
 		_areas pushBack _x;
 	};
 } forEach _synched;
+
+// si aucune zone synchronisée, on quitte
+if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
+
+// préparation du reste des données de la fonction
+private _unitsFinal			= [];
+private _side				= side (_units select 0);
+private _groupsPerArea		= _logic getVariable ["GroupsPerArea", 4];
+private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
+private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
+private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
+private _debug				= _logic getVariable ["Debug", false];
 
 // on défini la couleur des zones en fonction du side des IA synchronisées
 private _areasColor = switch (_side) do {
