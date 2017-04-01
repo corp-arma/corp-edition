@@ -85,7 +85,6 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 
 				// si des joueurs ont été trouvé, on réactive le PATH
 				if (count _players > 0) then {
-					systemChat "path";
 					_unit enableAI "PATH";
 					_loop = false;
 				};
