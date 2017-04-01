@@ -148,7 +148,7 @@ class CancelButton: RscButton {
 	colorBackground[] = {0.1, 0.1, 0.1, 1};
 };
 
-class ValideButton: RscButton {
+class ConfirmButton: RscButton {
 	idc = -1;
 
 	text = $STR_CORP_CORE_CONFIRM;

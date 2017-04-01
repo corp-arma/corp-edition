@@ -6,7 +6,7 @@ class BaseListBox;
 class BaseEdit;
 class BaseMap;
 class CancelButton;
-class ValideButton;
+class ConfirmButton;
 
 class CORP_ParaJumpClassicDialog {
 	idd = PARADROP_DIALOG_IDD;
@@ -67,7 +67,7 @@ class CORP_ParaJumpClassicDialog {
 			h = safeZoneH * 0.05;
 		};
 
-		class TeleportButton: ValideButton {
+		class TeleportButton: ConfirmButton {
 			idc = PARADROP_JUMP_IDC;
 
 			x = safeZoneX + safeZoneW * 0.5025;
