@@ -13,7 +13,7 @@ class CORP_TeleportDialog {
 
 	class controlsBackground {
 		class Title: BaseTitle {
-			text = "Téléportation";
+			text = $STR_CORP_TELEPORT_DN;
 		};
 
 		class Background: BaseBackgroundBox {};
@@ -48,7 +48,7 @@ class CORP_TeleportDialog {
 			w = safeZoneW * 0.095;
 			h = safeZoneH * 0.05;
 
-			text = "Téléportation";
+			text = $STR_CORP_TELEPORT_TELEPORT;
 		};
 	};
 };

@@ -9,5 +9,14 @@
 			</Key>
 
 		</Container>
+
+		<Container name="ui">
+
+			<Key ID="STR_CORP_TELEPORT_TELEPORT">
+				<Original>Teleport</Original>
+				<French>Téléportation</French>
+			</Key>
+
+		</Container>
 	</Package>
 </Project>
