@@ -33,7 +33,7 @@ _sides deleteAt (_sides find _side);
 	};
 } forEach _buildings;
 
-_positions = _positions call BIS_fnc_arrayShuffle;
+_positions = [_positions] call CBA_fnc_shuffle;
 private _positionsCount = count _positions;
 
 // on place les unités dans les bâtiments
