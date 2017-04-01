@@ -27,13 +27,7 @@ private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
 private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
 private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
-
-// on défini la couleur des zones en fonction du side des IA synchronisées
-private _areasColor = switch (_side) do {
-	case west: {"ColorWEST"};
-	case independent: {"ColorGUER"};
-	default {"ColorEAST"};
-};
+private _areasColor			= [_side, "STRING"] call CORP_fnc_getSideColor;
 
 // si le débug est demandé et que la machine a une interface
 if (_debug && {hasInterface}) then {
@@ -53,11 +47,7 @@ if (_debug && {hasInterface}) then {
 				private _group = _x;
 
 				// on détermine la couleur du side du groupe
-				private _sideColor = switch (side _group) do {
-					case west: {[0, 0.3, 0.6, 1]};
-					case independent: {[0, 0.5, 0, 1]};
-					default {[0.5, 0, 0, 1]};
-				};
+				private _sideColor = [side _group, "ARRAY"] call CORP_fnc_getSideColor;
 
 				// on dessine chaque unité du groupe
 				{
