@@ -19,6 +19,7 @@ class CfgFunctions {
 		class Geometry {
 			file = "\corp_edition_core\functions\geometry";
 			class Centroid {};
+			class GetRandomPosInArea {};
 		};
 
 		class Misc {
