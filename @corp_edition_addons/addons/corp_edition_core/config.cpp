@@ -24,6 +24,7 @@ class CfgFunctions {
 		class Misc {
 			file = "\corp_edition_core\functions\misc";
 			class FakeFunction {};
+			class GetSideColor {};
 		};
 	};
 };
