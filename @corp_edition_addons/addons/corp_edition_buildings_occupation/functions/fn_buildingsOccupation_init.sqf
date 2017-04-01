@@ -21,11 +21,7 @@ private _debug				= _logic getVariable ["Debug", false];
 } forEach _synched;
 
 // on définit la couleur des zones en fonction du side des IA synchronisées
-private _areasColor = switch (_side) do {
-	case west: {"ColorWEST"};
-	case independent: {"ColorGUER"};
-	default {"ColorEAST"};
-};
+private _areasColor = [_side, "STRING"] call CORP_fnc_getSideColor;
 
 // si le débug est demandé et que la machine a une interface
 if (_debug && {hasInterface}) then {
@@ -44,11 +40,7 @@ if (_debug && {hasInterface}) then {
 				private _area = _x;
 
 				// on définit la couleur de l'icône de l'unité
-				private _sideColor = switch (side (_area select 0)) do {
-					case west: {[0, 0.3, 0.6, 1]};
-					case independent: {[0, 0.5, 0, 1]};
-					default {[0.5, 0, 0, 1]};
-				};
+				private _sideColor = [side (_area select 0), "ARRAY"] call CORP_fnc_getSideColor;
 
 				// pour chaque unité de la zone on dessine une icône
 				{
