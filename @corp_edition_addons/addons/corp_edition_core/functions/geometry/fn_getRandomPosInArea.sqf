@@ -42,11 +42,7 @@ if (_isRectangle) then {
 	private _yp = _y * (cos _angle) + _x * (sin _angle);
 
 	// addition du vecteur
-	_origin = _origin vectorAdd [
-		_xp,
-		_yp,
-		0
-	];
+	_origin = _origin vectorAdd [_xp, _yp, 0];
 };
 
 _origin set [2, 0];
