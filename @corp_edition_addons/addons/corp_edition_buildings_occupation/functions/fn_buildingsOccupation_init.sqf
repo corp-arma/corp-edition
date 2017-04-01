@@ -86,7 +86,7 @@ if (_debug && {hasInterface}) then {
 		hint "Le Module d'occupation devait être utilisé avec des zones circulaires, pas rectangulaires ni éliptiques";
 	};
 
-	private _occupation = [_center, (_area select 0) * 0.5, _unitsPerArea, _side, _unitsFinal, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
+	private _occupation = [_center, _area select 0, _unitsPerArea, _side, _unitsFinal, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
 
 	if (_debug) then {
 		CORP_var_buildingsOccupation_occupations pushBack _occupation;
