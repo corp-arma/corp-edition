@@ -9,34 +9,11 @@ private _side		= param [2, east, [sideUnknown]];
 private _units		= param [3];
 private _waypoints	= param [4, 4, [0]];
 
-// fonction de séléction aléatoire d'une position dans une zone rectangulaire ou circulaire
-private _fnc_findPos = {
-	private _origin	= param [0, [0, 0, 0], [[]], 3];
-	private _area	= param [1, [0, 0, 0, false, -1], [[]], 5];
-
-	// si la zone est rectangulaire
-	if (_area select 3) then {
-		// horizontal
-		_origin	= [_origin, random (_area select 0), ((_area select 2) + 90) + 180 * (round (random 1))] call BIS_fnc_relPos;
-
-		// vertical
-		_origin	= [_origin, random (_area select 1), (_area select 2) + 180 * (round (random 1))] call BIS_fnc_relPos;
-
-	// sinon, la zone est circulaire
-	} else {
-		systemChat "pas codé";
-	};
-
-	_origin set [2, 0];
-
-	_origin
-};
-
 // on détermine la position des points de passage
 private _waypointsPositions = [];
 
 for [{private _i = 0}, {_i < _waypoints}, {_i = _i + 1}] do {
-	private _pos = [_center, _area] call _fnc_findPos;
+	private _pos = [_center, _area] call CORP_fnc_getRandomPosInArea;
 	_waypointsPositions pushBack _pos;
 };
 
