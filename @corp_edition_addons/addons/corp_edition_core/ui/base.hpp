@@ -144,14 +144,14 @@ class BaseBackgroundBox: RscText {
 class CancelButton: RscButton {
 	idc = -1;
 
-	text = "Annuler";
+	text = $STR_CORP_CORE_CANCEL;
 	colorBackground[] = {0.1, 0.1, 0.1, 1};
 };
 
 class ValideButton: RscButton {
 	idc = -1;
 
-	text = "Valider";
+	text = $STR_CORP_CORE_CONFIRM;
 	colorBackground[] = {0.1, 0.1, 0.1, 1};
 };
 
