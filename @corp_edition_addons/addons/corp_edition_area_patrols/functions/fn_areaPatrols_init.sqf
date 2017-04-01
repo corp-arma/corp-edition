@@ -1,22 +1,8 @@
-private _logic				= param [0, objNull, [objNull]];
-private _units				= param [1, [], [[]]];
-private _synched			= synchronizedObjects _logic;
+private _logic	= param [0, objNull, [objNull]];
+private _units	= param [1, [], [[]]];
+private _areas	= _logic call CORP_fnc_getSynchronizedAreas;
 
-// si aucune unité synchronisée, on quitte
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
-
-private _areas = [];
-
-// pour chaque objet synchronisé au module (n'inclut pas les unités)
-// on vérifie si c'est un object de de type module de zone
-// si c'est le cas, on pouse l'objet dans le tableau de zones
-{
-	if ((typeOf _x) in ["CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle"]) then {
-		_areas pushBack _x;
-	};
-} forEach _synched;
-
-// si aucune zone synchronisée, on quitte
 if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
 
 // préparation du reste des données de la fonction
