@@ -9,5 +9,24 @@
 			</Key>
 
 		</Container>
+
+		<Container name="ui">
+
+			<Key ID="STR_CORP_PARADROP_ELEVATION_TOOLTIP">
+				<Original>Elevation, you can use the mousewheel</Original>
+				<French>Altitude, vous pouvez utliser la molette de votre souris</French>
+			</Key>
+
+			<Key ID="STR_CORP_PARADROP_DROPZONE_TOOLTIP">
+				<Original>Double-click to set drop zone</Original>
+				<French>Double-cliquez pour définir le point de saut</French>
+			</Key>
+
+			<Key ID="STR_CORP_PARADROP_PARADROP">
+				<Original>Drop</Original>
+				<French>Saut</French>
+			</Key>
+
+		</Container>
 	</Package>
 </Project>

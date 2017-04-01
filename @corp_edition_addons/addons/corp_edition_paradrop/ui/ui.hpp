@@ -16,7 +16,7 @@ class CORP_ParaJumpClassicDialog {
 
 	class ControlsBackground {
 		class Title: BaseTitle {
-			text = "ParaDrop";
+			text = $STR_CORP_PARADROP_DN;
 		};
 
 		class Background: BaseBackgroundBox {};
@@ -44,7 +44,7 @@ class CORP_ParaJumpClassicDialog {
 			h = safeZoneH * 0.05;
 
 			text = "5000";
-			tooltip = "Altitude, vous pouvez utliser la molette de votre souris";
+			tooltip = $STR_CORP_PARADROP_ELEVATION_TOOLTIP;
 		};
 
 		class Map: BaseMap {
@@ -55,7 +55,7 @@ class CORP_ParaJumpClassicDialog {
 			w = safeZoneW * 0.39;
 			h = safeZoneH * 0.52;
 
-			tooltip = "Double-cliquez pour définir le point de saut";
+			tooltip = $STR_CORP_PARADROP_DROPZONE_TOOLTIP;
 		};
 
 		class CloseButton: CancelButton {
@@ -75,7 +75,7 @@ class CORP_ParaJumpClassicDialog {
 			w = safeZoneW * 0.095;
 			h = safeZoneH * 0.05;
 
-			text = "Saut";
+			text = $STR_CORP_PARADROP_PARADROP;
 		};
 	};
 };
