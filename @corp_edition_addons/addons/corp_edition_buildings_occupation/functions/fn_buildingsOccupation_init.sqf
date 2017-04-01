@@ -1,14 +1,17 @@
-private _logic				= param [0, objNull, [objNull]];
-private _units				= param [1, [], [[]]];
+private _logic	= param [0, objNull, [objNull]];
+private _units	= param [1, [], [[]]];
+private _areas	= _logic call CORP_fnc_getSynchronizedAreas;
+
+if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_BUILDINGS_OCCUPATION_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
+if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_BUILDINGS_OCCUPATION_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
+
+// préparation du reste des données de la fonction
 private _unitsFinal			= [];
-private _areas				= _logic call CORP_fnc_getSynchronizedAreas;
 private _side				= side (_units select 0);
 private _unitsPerArea		= _logic getVariable ["UnitsPerArea", 10];
 private _keepPosition		= _logic getVariable ["KeepPosition", 0.5];
 private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
-
-// todo : ajouter des sortie en cas d'erreur sur les paramètres
 
 // on définit la couleur des zones en fonction du side des IA synchronisées
 private _areasColor = [_side, "STRING"] call CORP_fnc_getSideColor;
