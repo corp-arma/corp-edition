@@ -1,5 +1,5 @@
 /*
-	NOM :			CRP_fnc_alivePlayersRadius
+	NOM :			CORP_fnc_alivePlayersRadius
 	AUTEUR :		zgmrvn (edit Sacha)
 	DESCRIPTION :	récupère les joueur vivants/conscients (ACE3) dans une zone donnée
 
@@ -9,7 +9,7 @@
 			250,								// rayon
 			[west, independent],				// tableau de sides à rechercher
 			true								// (optionnel) récupérer les IA en plus des joueurs ?. Défaut : false;
-		] call CRP_fnc_nearestPlayers;
+		] call CORP_fnc_alivePlayersRadius;
 */
 
 private _center	= param [0, [0, 0, 0], [objNull, []], 3];
