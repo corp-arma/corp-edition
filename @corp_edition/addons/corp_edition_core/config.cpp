@@ -28,6 +28,7 @@ class CfgFunctions {
 			class FakeFunction {};
 			class GetSideColor {};
 			class GetSynchronizedAreas {};
+			class GetSynchronizedTriggers {};
 		};
 	};
 };
