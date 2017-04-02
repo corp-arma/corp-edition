@@ -81,12 +81,8 @@ if (_debug && {hasInterface}) then {
 {
 	private _center	= getPosASL _x;
 	private _area	= _x getvariable ["objectArea", [0, 0, 0, false, 0]];
-
-	if (_area select 3) then {
-		hint "Le Module d'occupation devait être utilisé avec des zones circulaires, pas rectangulaires ni éliptiques";
-	};
-
 	private _radius = (_area select 0) max (_area select 1);
+
 	private _occupation = [_center, _radius, _unitsPerArea, _side, _unitsFinal, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
 
 	if (_debug) then {
