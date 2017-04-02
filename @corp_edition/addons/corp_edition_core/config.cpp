@@ -14,6 +14,7 @@ class CfgFunctions {
 		class Players {
 			file = "\corp_edition_core\functions\players";
 			class AlivePlayersRadius {};
+			class FindPlayerFreePosition {};
 		};
 
 		class Geometry {
