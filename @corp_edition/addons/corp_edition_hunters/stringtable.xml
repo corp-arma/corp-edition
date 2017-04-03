@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+	<Package name="hunters">
+		<Container name="modules">
+
+			<Key ID="STR_CORP_HUNTERS_DN">
+				<Original>Hunters</Original>
+				<French>Groupe de chasse</French>
+			</Key>
+
+			<!-- units in hunt -->
+			<Key ID="STR_CORP_HUNTERS_HUNTING_UNITS_DN">
+				<Original>Number of hunting units</Original>
+				<French>Nombre d'unités en chasse</French>
+			</Key>
+
+			<Key ID="STR_CORP_HUNTERS_HUNTING_UNITS_DESC">
+				<Original>Number of hunting units</Original>
+				<French>Nombre d'unités en chasse</French>
+			</Key>
+
+			<!-- respawn distance -->
+			<Key ID="STR_CORP_HUNTERS_RESPAWN_DISTANCE_DN">
+				<Original>Respawn distance</Original>
+				<French>Distance de respawn</French>
+			</Key>
+
+			<Key ID="STR_CORP_HUNTERS_RESPAWN_DISTANCE_DESC">
+				<Original>Hunters respawn distance</Original>
+				<French>Distance de respawn du groupe de chasse</French>
+			</Key>
+
+			<!-- condition -->
+			<Key ID="STR_CORP_HUNTERS_CONDITION_DN">
+				<Original>Condition</Original>
+				<French>Condition</French>
+			</Key>
+
+			<Key ID="STR_CORP_HUNTERS_CONDITION_DESC">
+				<Original>Expression in string, if the condition is no longer fulfiled, hunters won't respawn anymore</Original>
+				<French>Expression sous forme de chaîne, si cette condition n'est plus remplie, le groupe de chasse ne respawnera plus</French>
+			</Key>
+
+			<!-- debug -->
+			<Key ID="STR_CORP_HUNTERS_DEBUG_DN">
+				<Original>Debug</Original>
+				<French>Débug</French>
+			</Key>
+
+			<Key ID="STR_CORP_HUNTERS_DEBUG_DESC">
+				<Original>Draws area and hunters on map</Original>
+				<French>Sur carte, dessine la zone et le groupe de chasse créés</French>
+			</Key>
+
+		</Container>
+	</Package>
+</Project>
