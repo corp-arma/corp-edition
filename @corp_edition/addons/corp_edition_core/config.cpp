@@ -79,6 +79,15 @@ class CfgVehicles {
 			isRectangle = 1;
 		};
 	};
+
+	class CORP_Module_AreaPosition: CORP_Module_AreaEllipse {
+		_generalMacro = "CORP_Module_AreaPosition";
+		displayName = $STR_CORP_CORE_POSITION_AREA_DN;
+		icon = "\corp_edition_core\icon_area_position.paa";
+
+		canSetArea = 0;
+		class AttributeValues {};
+	};
 };
 
 class CfgCORP {};

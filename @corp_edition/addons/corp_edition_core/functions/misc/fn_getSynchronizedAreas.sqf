@@ -3,7 +3,7 @@ if !("Module_F" in ([configFile >> "CfgVehicles" >> typeof _this, true] call BIS
 private _areas = [];
 
 {
-	if ((typeOf _x) in ["CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle"]) then {
+	if ((typeOf _x) in ["CORP_Module_AreaEllipse", "CORP_Module_AreaRectangle", "CORP_Module_AreaPosition"]) then {
 		_areas pushBack _x;
 	};
 } forEach (synchronizedObjects _this);

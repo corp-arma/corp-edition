@@ -13,6 +13,11 @@
 				<French>Zone rectangulaire</French>
 			</Key>
 
+			<Key ID="STR_CORP_CORE_POSITION_AREA_DN">
+				<Original>Position area</Original>
+				<French>Zone position</French>
+			</Key>
+
 		</Container>
 
 		<Container name="ui">
