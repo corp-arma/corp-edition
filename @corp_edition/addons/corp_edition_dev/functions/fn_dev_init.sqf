@@ -6,6 +6,7 @@ if (player in _units) then {
 	execVM "corp_edition_dev\scripts\arsenal.sqf";
 	execVM "corp_edition_dev\scripts\allowDamage.sqf";
 	execVM "corp_edition_dev\scripts\captive.sqf";
+	execVM "corp_edition_dev\scripts\icon.sqf";
 
 	addMissionEventHandler ["EntityRespawned", {
 		if ((_this select 0) == player) then {
