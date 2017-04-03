@@ -2,8 +2,8 @@ private _logic	= param [0, objNull, [objNull]];
 private _units	= param [1, [], [[]]];
 private _areas	= _logic call CORP_fnc_getSynchronizedAreas;
 
-if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
-if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_AREA_PATROLS_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
+if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
+if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_CORE_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
 
 // préparation du reste des données de la fonction
 private _unitsFinal			= [];

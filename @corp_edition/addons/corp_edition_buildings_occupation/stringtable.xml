@@ -54,18 +54,5 @@
 
 		</Container>
 
-		<Container name="errors">
-
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_NO_UNIT_SYNCHED">
-				<Original>No unit synched to the module</Original>
-				<French>Aucune unité synchronisée au module</French>
-			</Key>
-
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_NO_AREA_SYNCHED">
-				<Original>No area synched to the module</Original>
-				<French>Aucune zone synchronisée au module</French>
-			</Key>
-
-		</Container>
 	</Package>
 </Project>
