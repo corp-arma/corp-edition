@@ -9,20 +9,20 @@
 			</Key>
 
 			<!-- groups per area -->
-			<Key ID="STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DN">
-				<Original>Number of groups per area</Original>
-				<French>Nombre de groupes par zone</French>
+			<Key ID="STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DN">
+				<Original>Number of groups</Original>
+				<French>Nombre de groupes</French>
 			</Key>
 
-			<Key ID="STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DESC">
-				<Original>Number of groups per area</Original>
-				<French>Nombre de groupes par zone</French>
+			<Key ID="STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DESC">
+				<Original>Number of groups</Original>
+				<French>Nombre de groupes</French>
 			</Key>
 
 			<!-- units per group -->
 			<Key ID="STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DN">
-				<Original>Max number of units per group</Original>
-				<French>Nombre d'unités max par groupe</French>
+				<Original>Max units per group</Original>
+				<French>Unités max par groupe</French>
 			</Key>
 
 			<Key ID="STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DESC">
@@ -32,8 +32,8 @@
 
 			<!-- waypoints per group -->
 			<Key ID="STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DN">
-				<Original>Number of waypoints per group</Original>
-				<French>Nombre de points de passage par groupe</French>
+				<Original>Waypoints per group</Original>
+				<French>Points de passage par groupe</French>
 			</Key>
 
 			<Key ID="STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DESC">

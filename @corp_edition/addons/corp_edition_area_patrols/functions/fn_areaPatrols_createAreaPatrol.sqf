@@ -1,7 +1,9 @@
 /*
-	framework de mission du CORP
+	Outils d'édition du CORP
 	http://www.corp-arma.fr
 */
+
+#define WAYPOINT_COMPLETION_RADIUS 4
 
 private _center		= param [0, [0, 0, 0], [[]], 3];
 private _area		= param [1, [0, 0, 0, false, -1], [[]], 5];
@@ -35,14 +37,21 @@ _group setBehaviour "RED";
 _group setSpeedMode "LIMITED";
 
 {
-	_type = ["MOVE", "CYCLE"] select (_forEachIndex == ((count _waypointsPositions) - 1));
-
 	_wp = _group addWaypoint [_waypointsPositions select _forEachIndex, 0];
-	_wp setWaypointCompletionRadius 4;
+	_wp setWaypointCompletionRadius WAYPOINT_COMPLETION_RADIUS;
 	_wp setWaypointFormation (selectRandom _formations);
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointCombatMode "RED";
-	_wp setWaypointType _type;
+	_wp setWaypointType "MOVE";
+
+	if (_forEachIndex == ((count _waypointsPositions) - 1)) then {
+		_wp = _group addWaypoint [_waypointsPositions select _forEachIndex, 0];
+		_wp setWaypointCompletionRadius WAYPOINT_COMPLETION_RADIUS;
+		_wp setWaypointFormation (selectRandom _formations);
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointCombatMode "RED";
+		_wp setWaypointType "CYCLE";
+	};
 } forEach _waypointsPositions;
 
 _group

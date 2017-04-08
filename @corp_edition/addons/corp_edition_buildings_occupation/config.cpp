@@ -46,11 +46,16 @@ class CfgVehicles {
 		isDisposable = 0;
 		is3DEN = 0;
 
+		canSetArea = 1;
+		class AttributeValues {
+			size3[]={50, 50, -1};
+		};
+
 		class Attributes: AttributesBase {
-			class UnitsPerArea: Edit {
-				property = "CORP_Module_BuildingsOccupation_UnitsPerArea";
-				displayName = $STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DN;
-				description = $STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DESC;
+			class NumberOfUnits: Edit {
+				property = "CORP_Module_BuildingsOccupation_NumberOfUnits";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DESC;
 				typeName = "NUMBER";
 				defaultValue = "10";
 			};

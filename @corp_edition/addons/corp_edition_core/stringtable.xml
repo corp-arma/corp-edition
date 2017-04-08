@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CORP Edition Addons">
 	<Package name="core">
-		<Container name="modules">
-
-			<Key ID="STR_CORP_CORE_ELLIPTICAL_AREA_DN">
-				<Original>Elliptical area</Original>
-				<French>Zone éliptique</French>
-			</Key>
-
-			<Key ID="STR_CORP_CORE_RECTANGULAR_AREA_DN">
-				<Original>Rectangular area</Original>
-				<French>Zone rectangulaire</French>
-			</Key>
-
-			<Key ID="STR_CORP_CORE_POSITION_AREA_DN">
-				<Original>Position area</Original>
-				<French>Zone position</French>
-			</Key>
-
-		</Container>
 
 		<Container name="ui">
 

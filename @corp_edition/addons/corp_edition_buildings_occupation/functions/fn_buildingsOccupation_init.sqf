@@ -1,20 +1,16 @@
 private _logic	= param [0, objNull, [objNull]];
 private _units	= param [1, [], [[]]];
-private _areas	= _logic call CORP_fnc_getSynchronizedAreas;
 
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
-if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_CORE_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
 
-// préparation du reste des données de la fonction
-private _unitsFinal			= [];
-private _side				= side (_units select 0);
-private _unitsPerArea		= _logic getVariable ["UnitsPerArea", 10];
+private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
+private _numberOfUnits		= _logic getVariable ["NumberOfUnits", 10];
 private _keepPosition		= _logic getVariable ["KeepPosition", 0.5];
 private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
 
-// on définit la couleur des zones en fonction du side des IA synchronisées
-private _areasColor = [_side, "STRING"] call CORP_fnc_getSideColor;
+private _units	= _units call CORP_fnc_getGroupedUnits;
+private _side	= side (_units select 0);
 
 // si le débug est demandé et que la machine a une interface
 if (_debug && {hasInterface}) then {
@@ -30,74 +26,44 @@ if (_debug && {hasInterface}) then {
 
 			// pour chaque zone
 			{
-				private _area = _x;
-
-				// on définit la couleur de l'icône de l'unité
-				private _sideColor = [side (_area select 0), "ARRAY"] call CORP_fnc_getSideColor;
-
-				// pour chaque unité de la zone on dessine une icône
+				private _areaUnits	= _x;
+				// pour chaque unité en vie de la zone on dessine une icône
 				{
-					_map drawIcon [
-						getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-						_sideColor,
-						visiblePosition _x,
-						0.5 / ctrlMapScale _map,
-						0.5 / ctrlMapScale _map,
-						getDirVisual _x
-					];
-				} forEach _area;
+					if (alive _x) then {
+						_map drawIcon [
+							getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
+							[side _x, "ARRAY"] call CORP_fnc_getSideColor,
+							visiblePosition _x,
+							0.5 / ctrlMapScale _map,
+							0.5 / ctrlMapScale _map,
+							getDirVisual _x
+						];
+					};
+				} forEach _areaUnits;
 			} forEach CORP_var_buildingsOccupation_occupations;
-
 		}];
 	};
 
-	// on dessine les zones sur carte
-	{
-		private _area = _x getvariable ["objectArea", [0, 0, 0, false, 0]];
-
-		private _marker = createMarker [format ["area_%1", _x], _x];
-		_marker setMarkerShape (["ELLIPSE", "RECTANGLE"] select (_area select 3));
-		_marker setMarkerSize [_area select 0, _area select 1];
-		_marker setMarkerDir (_area select 2);
-		_marker setMarkerBrush "Border";
-		_marker setMarkerColor _areasColor;
-	} forEach _areas;
+	// on dessine la zone sur carte
+	private _marker = createMarker [format ["area_%1", _logic], _logic];
+	_marker setMarkerShape (["ELLIPSE", "RECTANGLE"] select (_area select 3));
+	_marker setMarkerSize [_area select 0, _area select 1];
+	_marker setMarkerDir (_area select 2);
+	_marker setMarkerBrush "Border";
+	_marker setMarkerColor ([_side, "STRING"] call CORP_fnc_getSideColor);
 };
 
-// on récupères les unités synchronisées au module
-// et on génère un tableau consolidé de toutes les classnames
+// création de l'occupation
+private _occupation = [getPosASL _logic, (_area select 0) max (_area select 1), _numberOfUnits, _side, [_units, {typeOf _x}] call CBA_fnc_filter, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
+
+if !(isNil {CORP_var_buildingsOccupation_occupations}) then {
+	CORP_var_buildingsOccupation_occupations pushBack _occupation;
+};
+
 {
-	private _unit = _x;
-
-	{
-		_typeOf = typeOf _x;
-		if !(_typeOf in _unitsFinal) then {
-			_unitsFinal pushBack _typeOf;
-		};
-	} forEach (units _unit);
-} forEach _units;
-
-// pour chaque zone on créé l'occupation
-{
-	private _center	= getPosASL _x;
-	private _area	= _x getvariable ["objectArea", [0, 0, 0, false, 0]];
-	private _radius = (_area select 0) max (_area select 1);
-
-	private _occupation = [_center, _radius, _unitsPerArea, _side, _unitsFinal, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
-
-	if (_debug) then {
-		CORP_var_buildingsOccupation_occupations pushBack _occupation;
-	};
-
 	// activation/désactivation de la simulation dynamique pour les unités créées
-	{
-		_x enableDynamicSimulation _dynamicSimulation;
-	} forEach _occupation;
-} forEach _areas;
+	_x enableDynamicSimulation _dynamicSimulation;
 
-// todo : supprimer tous les triggers synchronisés
-
-// on supprime manuellement le module
-// on ne le fait pas via la propriété "disposable" de la config
-// parce que le module est supprimé avant que l'on ait récupéré les déclencheurs synchronisés
-deleteVehicle _logic;
+	// copie de l'équipement d'une des unités synchronisée
+	_x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
+} forEach _occupation;

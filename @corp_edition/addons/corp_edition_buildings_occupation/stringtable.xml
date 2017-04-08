@@ -8,15 +8,15 @@
 				<French>Occupation de bâtiments</French>
 			</Key>
 
-			<!-- units per area -->
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DN">
-				<Original>Number of units per area</Original>
-				<French>Nombre d'unités par zone</French>
+			<!-- number of units -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DN">
+				<Original>Number of units</Original>
+				<French>Nombre d'unités</French>
 			</Key>
 
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_UNITS_PER_AREA_DESC">
-				<Original>Number of units per area</Original>
-				<French>"Nombre d'unités par zone"</French>
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DESC">
+				<Original>Number of units</Original>
+				<French>Nombre d'unités</French>
 			</Key>
 
 			<!-- keep position -->

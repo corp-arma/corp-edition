@@ -83,7 +83,7 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 			while {_loop && {alive _unit}} do {
 				private _players = [_pos, PATH_ACTIVATION_DISTANCE, _sides] call CORP_fnc_alivePlayersRadius;
 
-				// si des joueurs ont été trouvé, on réactive le PATH
+				// si des joueurs ont été trouvés, on réactive le PATH
 				if (count _players > 0) then {
 					_unit enableAI "PATH";
 					_loop = false;

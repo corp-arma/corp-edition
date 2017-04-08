@@ -45,11 +45,17 @@ class CfgVehicles {
 		isDisposable = 0;
 		is3DEN = 0;
 
+		canSetArea = 1;
+		class AttributeValues {
+			size3[]={50, 50, -1};
+			isRectangle = 1;
+		};
+
 		class Attributes: AttributesBase {
-			class GroupsPerArea: Edit {
-				property = "CORP_Module_AreaPatrols_GroupsPerArea";
-				displayName = $STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DN;
-				description = $STR_CORP_AREA_PATROLS_GROUPS_PER_AREA_DESC;
+			class NumberOfGroups: Edit {
+				property = "CORP_Module_AreaPatrols_NumberOfGroups";
+				displayName = $STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DN;
+				description = $STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DESC;
 				typeName = "NUMBER";
 				defaultValue = "4";
 			};

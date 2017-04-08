@@ -1,19 +1,17 @@
 private _logic	= param [0, objNull, [objNull]];
 private _units	= param [1, [], [[]]];
-private _areas	= _logic call CORP_fnc_getSynchronizedAreas;
 
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
-if (count _areas == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_CORE_NO_AREA_SYNCHED"]] call BIS_fnc_error;};
 
-// préparation du reste des données de la fonction
-private _unitsFinal			= [];
-private _side				= side (_units select 0);
-private _groupsPerArea		= _logic getVariable ["GroupsPerArea", 4];
+private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
+private _numberOfGroups		= _logic getVariable ["NumberOfGroups", 4];
 private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
 private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
 private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
-private _areasColor			= [_side, "STRING"] call CORP_fnc_getSideColor;
+
+private _units	= _units call CORP_fnc_getGroupedUnits;
+private _side	= side (_units select 0);
 
 // si le débug est demandé et que la machine a une interface
 if (_debug && {hasInterface}) then {
@@ -30,10 +28,8 @@ if (_debug && {hasInterface}) then {
 
 			// pour chaque groupe créé par un module Area Patrols et dont le paramètre "débug" est coché
 			{
-				private _group = _x;
-
-				// on détermine la couleur du side du groupe
-				private _sideColor = [side _group, "ARRAY"] call CORP_fnc_getSideColor;
+				private _group		= _x;
+				private _sideColor	= [side _group, "ARRAY"] call CORP_fnc_getSideColor;
 
 				// on dessine chaque unité du groupe
 				{
@@ -58,59 +54,36 @@ if (_debug && {hasInterface}) then {
 		}];
 	};
 
-	// on dessine les zones sur carte
-	{
-		private _area = _x getvariable ["objectArea", [0, 0, 0, false, 0]];
-
-		private _marker = createMarker [format ["area_%1", _x], _x];
-		_marker setMarkerShape (["ELLIPSE", "RECTANGLE"] select (_area select 3));
-		_marker setMarkerSize [_area select 0, _area select 1];
-		_marker setMarkerDir (_area select 2);
-		_marker setMarkerBrush "Border";
-		_marker setMarkerColor _areasColor;
-	} forEach _areas;
+	// on dessine la zone
+	private _marker = createMarker [format ["area_%1", _logic], _logic];
+	_marker setMarkerShape "RECTANGLE";
+	_marker setMarkerSize [_area select 0, _area select 1];
+	_marker setMarkerDir (_area select 2);
+	_marker setMarkerBrush "Border";
+	_marker setMarkerColor ([_side, "STRING"] call CORP_fnc_getSideColor);
 };
 
-// pour chaque unité synchronisée au module
-{
-	private _unit = _x;
+// on créé les patrouilles
+for "_i" from 0 to (_numberOfGroups - 1) do {
+	private _unitsResized = [];
+	private _random = ceil (random (_unitsPerGroup - 1));
 
-	// on récupères toutes les unités de son groupe
-	// et on ajoute le classname de l'unité au tableau final d'unités s'il n'y est pas déjà
-	{
-		_typeOf = typeOf _x;
-		if !(_typeOf in _unitsFinal) then {
-			_unitsFinal pushBack _typeOf;
-		};
-	} forEach (units _unit);
-} forEach _units;
-
-// pour chaque zone on créé les patrouilles
-{
-	private _center	= getPosASL _x;
-	private _area	= _x getvariable ["objectArea", [0, 0, 0, false, 0]];;
-
-	for "_i" from 0 to (_groupsPerArea - 1) do {
-		private _unitsResized = [];
-		private _random = ceil (random (_unitsPerGroup - 1));
-
-		for "_ii" from 0 to _random do {
-			_unitsResized pushBack (selectRandom _unitsFinal);
-		};
-
-		_patrol = [_center, _area, _side, _unitsResized, _waypointsPerGroup] call CORP_fnc_areaPatrols_createAreaPatrol;
-		if (_debug) then {
-			CORP_var_areaPatrols_patrols pushBack _patrol;
-		};
-
-		// activation/désactivation de la simulation dynamique pour le groupe créé
-		_patrol enableDynamicSimulation _dynamicSimulation;
+	for "_ii" from 0 to _random do {
+		_unitsResized pushBack (selectRandom _units);
 	};
-} forEach _areas;
 
-// todo : supprimer tous les triggers synchronisés
+	private _group = [getPosASL _logic, _area, _side, [_unitsResized, {typeOf _x}] call CBA_fnc_filter, _waypointsPerGroup] call CORP_fnc_areaPatrols_createAreaPatrol;
 
-// on supprime manuellement le module
-// on ne le fait pas via la propriété "disposable" de la config
-// parce que le module est supprimé avant que l'on ait récupéré les déclencheurs synchronisés
-deleteVehicle _logic;
+	// debug
+	if !(isNil {CORP_var_areaPatrols_patrols}) then {
+		CORP_var_areaPatrols_patrols pushBack _group;
+	};
+
+	// activation/désactivation de la simulation dynamique pour le groupe créé
+	_group enableDynamicSimulation _dynamicSimulation;
+
+	// copie de l'équipement d'une des unités synchronisée
+	{
+		_x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
+	} forEach (units _group);
+};
