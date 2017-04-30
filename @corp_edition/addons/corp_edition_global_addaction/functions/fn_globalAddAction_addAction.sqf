@@ -9,13 +9,13 @@
 	EXAMPLE :
 		// serveur
 		[
-			_ammoBox,							// objet
-			"<t color='#FF0000'>My action</t>",	// texte de l'action
-			"_this execVM 'monScriptclient'",	// expression à exécuter chez les clients, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
-			"",									// expression à exécuter côté serveur, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
-			6,									// distance d'affichage de l'action
-			false,								// supprimer l'objet
-			true								// supprimer l'action, pas d'importance si l'objet est supprimé
+			_ammoBox,								// objet
+			"<t color='#FF0000'>Mon action</t>",	// texte de l'action
+			"_this execVM 'monScriptclient.sqf'",	// expression à exécuter chez les clients, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
+			"",										// expression à exécuter côté serveur, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
+			6,										// distance d'affichage de l'action
+			false,									// supprimer l'objet
+			true									// supprimer l'action, pas d'importance si l'objet est supprimé
 		] call CORP_fnc_globalAddAction_addAction;
 */
 

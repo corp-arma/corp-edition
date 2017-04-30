@@ -19,7 +19,7 @@
 				<French>Texte de l'action</French>
 			</Key>
 
-			<!-- server script -->
+			<!-- server expression -->
 			<Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN">
 				<Original>Server expression</Original>
 				<French>Expression serveur</French>
@@ -30,7 +30,7 @@
 				<French>Expression serveur</French>
 			</Key>
 
-			<!-- client script -->
+			<!-- client expression -->
 			<Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DN">
 				<Original>Client expression</Original>
 				<French>Expression client</French>
@@ -44,12 +44,12 @@
 			<!-- action distance -->
 			<Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN">
 				<Original>Action distance</Original>
-				<French>Distance de l'actiont</French>
+				<French>Distance de l'action</French>
 			</Key>
 
 			<Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC">
 				<Original>Action distance</Original>
-				<French>Distance de l'actiont</French>
+				<French>Distance de l'action</French>
 			</Key>
 
 			<!-- delete object -->
