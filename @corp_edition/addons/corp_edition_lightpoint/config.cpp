@@ -1,3 +1,8 @@
+/*
+	Outils d'édition du CORP
+	http://www.corp-arma.fr
+*/
+
 class CfgPatches {
 	class CORP_Edition_Lightpoint {
 		units[] = {"CORP_Module_Lightpoint"};
