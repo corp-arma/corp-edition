@@ -8,7 +8,7 @@ class CfgPatches {
 		units[] = {"CORP_Module_GlobalAddaction"};
 		author = "CORP Modding Studio";
 		requiredVersion = 1.66;
-		requiredAddons[] = {"A3_Modules_F", "corp_edition_core", "cba_strings"};
+		requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_strings"};
 	};
 };
 
@@ -20,6 +20,28 @@ class CfgFunctions {
 			file = "\corp_edition_global_addaction\functions";
 			class GlobalAddAction_Init {};
 			class GlobalAddAction_AddAction {};
+		};
+	};
+};
+
+class Cfg3DEN {
+	class Attributes {
+		class Controls;
+		class Title;
+		class Value;
+		class Edit;
+		class SliderDistance;
+
+		class SliderGlobalAddactionDistance: SliderDistance {
+			class Controls: Controls {
+				class Title: Title {};
+				class Value: Value {
+					sliderRange[] = {1, 15};
+					lineSize = 1;
+					sliderStep = 1;
+				};
+				class Edit: Edit {};
+			};
 		};
 	};
 };
@@ -81,6 +103,7 @@ class CfgVehicles {
 				description = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC;
 				typeName = "NUMBER";
 				defaultValue = "3";
+				control = "SliderGlobalAddactionDistance";
 			};
 
 			class DeleteObject: Checkbox {
