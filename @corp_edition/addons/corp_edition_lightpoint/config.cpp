@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {"CORP_Module_Lightpoint"};
 		author = "CORP Modding Studio";
 		requiredVersion = 1.66;
-		requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+		requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core"};
 	};
 };
 
