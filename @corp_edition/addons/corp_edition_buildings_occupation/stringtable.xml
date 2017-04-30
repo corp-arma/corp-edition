@@ -21,8 +21,8 @@
 
 			<!-- keep position -->
 			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DN">
-				<Original>Percentage of static units</Original>
-				<French>Pourcentage d'unités statiques</French>
+				<Original>Static units</Original>
+				<French>Unités statiques</French>
 			</Key>
 
 			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC">

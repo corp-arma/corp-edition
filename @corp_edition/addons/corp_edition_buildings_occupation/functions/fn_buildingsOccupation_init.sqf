@@ -5,9 +5,11 @@ if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILD
 
 private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
 private _numberOfUnits		= _logic getVariable ["NumberOfUnits", 10];
-private _keepPosition		= _logic getVariable ["KeepPosition", 0.5];
+private _keepPosition		= _logic getVariable ["KeepPosition", 50];
 private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
 private _debug				= _logic getVariable ["Debug", false];
+
+_keepPosition = _keepPosition / 100;
 
 private _units	= _units call CORP_fnc_getGroupedUnits;
 private _side	= side (_units select 0);
