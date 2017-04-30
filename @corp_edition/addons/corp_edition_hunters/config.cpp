@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {"CORP_Module_Hunters"};
 		author = "CORP Modding Studio";
 		requiredVersion = 1.66;
-		requiredAddons[] = {"A3_Modules_F", "corp_edition_core", "cba_arrays"};
+		requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_arrays"};
 	};
 };
 
@@ -16,6 +16,28 @@ class CfgFunctions {
 			class Hunters_Init {};
 			class Hunters_CheckAndCreateHunters {};
 			class Hunters_HuntersBehaviour {};
+		};
+	};
+};
+
+class Cfg3DEN {
+	class Attributes {
+		class Controls;
+		class Title;
+		class Value;
+		class Edit;
+		class SliderDistance;
+
+		class SliderHuntersDistance: SliderDistance {
+			class Controls: Controls {
+				class Title: Title {};
+				class Value: Value {
+					sliderRange[] = {100, 600};
+					lineSize = 50;
+					sliderStep = 50;
+				};
+				class Edit: Edit {};
+			};
 		};
 	};
 };
@@ -56,21 +78,13 @@ class CfgVehicles {
 				defaultValue = "4";
 			};
 
-			class RespawnDistance: Combo {
+			class RespawnDistance: Edit {
 				property = "CORP_Module_Hunters_RespawnDistance";
 				displayName = $STR_CORP_HUNTERS_RESPAWN_DISTANCE_DN;
 				description = $STR_CORP_HUNTERS_RESPAWN_DISTANCE_DESC;
 				typeName = "NUMBER";
 				defaultValue = "300";
-
-				class Values {
-					class 100 {name = "100m"; value = 100;};
-					class 200 {name = "200m"; value = 200;};
-					class 300 {name = "300m"; value = 300;};
-					class 400 {name = "400m"; value = 400;};
-					class 500 {name = "500m"; value = 500;};
-					class 600 {name = "600m"; value = 600;};
-				};
+				control = "SliderHuntersDistance";
 			};
 
 			class Condition: Edit {
