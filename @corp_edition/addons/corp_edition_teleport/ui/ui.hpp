@@ -4,7 +4,7 @@ class BaseTitle;
 class BaseBackgroundBox;
 class BaseListBox;
 class CancelButton;
-class ValideButton;
+class ConfirmButton;
 
 class CORP_TeleportDialog {
 	idd = TELEPORT_DIALOG_IDD;
@@ -40,7 +40,7 @@ class CORP_TeleportDialog {
 			h = safeZoneH * 0.05;
 		};
 
-		class TeleportButton: ValideButton {
+		class TeleportButton: ConfirmButton {
 			idc = TELEPORT_TELEPORT_IDC;
 
 			x = safeZoneX + safeZoneW * 0.5025;
