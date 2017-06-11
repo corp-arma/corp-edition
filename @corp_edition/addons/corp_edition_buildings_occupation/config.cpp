@@ -108,10 +108,18 @@ class CfgVehicles {
 				defaultValue = "true";
 			};
 
-			class Debug: Checkbox {
-				property = "CORP_Module_BuildingsOccupation_Debug";
-				displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DN;
-				description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DESC;
+			class DebugUnits: Checkbox {
+				property = "CORP_Module_BuildingsOccupation_DebugUnits";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DESC;
+				typeName = "BOOL";
+				defaultValue = "false";
+			};
+
+			class DebugBuildings: Checkbox {
+				property = "CORP_Module_BuildingsOccupation_DebugBuildings";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DESC;
 				typeName = "BOOL";
 				defaultValue = "false";
 			};

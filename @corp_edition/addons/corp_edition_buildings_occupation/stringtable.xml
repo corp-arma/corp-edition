@@ -52,15 +52,26 @@
 				<French>activer la Simulation Dynamique pour les groupes créés par le module</French>
 			</Key>
 
-			<!-- debug -->
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DN">
-				<Original>Debug</Original>
-				<French>Débug</French>
+			<!-- debug units -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DN">
+				<Original>Debug units</Original>
+				<French>Débug unités</French>
 			</Key>
 
-			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_DESC">
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DESC">
 				<Original>Draws areas and AIs of map</Original>
 				<French>Sur carte, déssine les zones et les IA créées</French>
+			</Key>
+
+			<!-- debug buildings -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DN">
+				<Original>Debug buildings</Original>
+				<French>Débug bâtiments</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DESC">
+				<Original>On map, draws buildings and indicate if they are in the database or not</Original>
+				<French>Sur carte, indique si les bâtiments de la zone sont référencés dans la base de données</French>
 			</Key>
 
 		</Container>
