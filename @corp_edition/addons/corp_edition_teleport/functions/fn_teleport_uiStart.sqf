@@ -42,7 +42,7 @@
 						1 fadeSound 1;
 					};
 				};
-			} forEach allPlayers;
+			} forEach (allPlayers - entities "HeadlessClient_F");
 		};
 	}];
 };
