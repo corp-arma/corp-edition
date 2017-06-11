@@ -87,7 +87,7 @@ class CfgVehicles {
 				displayName = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DN;
 				description = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC;
 				typeName = "NUMBER";
-				defaultValue = "50";
+				defaultValue = "0.5";
 				control = "Slider";
 			};
 
