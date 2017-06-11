@@ -14,7 +14,7 @@ private _keepPosition	= param [5, 0.5, [0]];
 private _resumeDistance	= param [6, 25, [0]];
 
 private _positions	= []; // toutes les positions trouvées dans la zone
-private _buildings	= nearestObjects [_center, ["Building"], _radius, false];
+private _buildings	= nearestObjects [_center, ["Building"], _radius, true];
 private _return		= [];
 
 private _sides	= [west, east, independent]; // sides opposés à l'unité en occupation
