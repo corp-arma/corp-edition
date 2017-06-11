@@ -30,6 +30,17 @@
 				<French>Pourcentage d'unités qui reste en place</French>
 			</Key>
 
+			<!-- resume distance -->
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DN">
+				<Original>Resume distance</Original>
+				<French>Distance de réactivation</French>
+			</Key>
+
+			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DESC">
+				<Original>Distance between player and unit at which static unit start to move back</Original>
+				<French>Distance entre un joueur et l'unité à partir de laquelle l'unité statique se remet à bouger</French>
+			</Key>
+
 			<!-- dynamic simulation -->
 			<Key ID="STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DN">
 				<Original>Dynamic simulation</Original>

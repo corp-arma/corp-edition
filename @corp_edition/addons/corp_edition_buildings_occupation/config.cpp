@@ -19,6 +19,28 @@ class CfgFunctions {
 	};
 };
 
+class Cfg3DEN {
+	class Attributes {
+		class Controls;
+		class Title;
+		class Value;
+		class Edit;
+		class SliderDistance;
+
+		class SliderBuildingsOccupationResumeDistance: SliderDistance {
+			class Controls: Controls {
+				class Title: Title {};
+				class Value: Value {
+					sliderRange[] = {5, 50};
+					lineSize = 1;
+					sliderStep = 5;
+				};
+				class Edit: Edit {};
+			};
+		};
+	};
+};
+
 class CfgVehicles {
 	class Logic;
 	class Module_F: Logic {
@@ -67,6 +89,15 @@ class CfgVehicles {
 				typeName = "NUMBER";
 				defaultValue = "50";
 				control = "Slider";
+			};
+
+			class ResumeDistance: Edit {
+				property = "CORP_Module_BuildingsOccupation_ResumeDistance";
+				displayName = $STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DN;
+				description = $STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DESC;
+				typeName = "NUMBER";
+				defaultValue = "25";
+				control = "SliderBuildingsOccupationResumeDistance";
 			};
 
 			class DynamicSimulation: Checkbox {

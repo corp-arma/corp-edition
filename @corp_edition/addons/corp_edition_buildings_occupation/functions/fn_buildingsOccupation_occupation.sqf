@@ -3,7 +3,6 @@
 	http://www.corp-arma.fr
 */
 
-#define PATH_ACTIVATION_DISTANCE 50
 #define PATH_ACTIVATION_LOOP_DELAY 10
 
 private _center			= param [0, [0, 0, 0], [objNull, []], 3];
@@ -12,6 +11,7 @@ private _unitsCount		= param [2, 10, [0]];
 private _side			= param [3, east, [sideUnknown]];
 private _units			= param [4, [], [[]]];
 private _keepPosition	= param [5, 0.5, [0]];
+private _resumeDistance	= param [6, 25, [0]];
 
 private _positions	= []; // toutes les positions trouvées dans la zone
 private _buildings	= nearestObjects [_center, ["Building"], _radius, false];
@@ -62,34 +62,36 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 
 	// si un poucentage d'unités fixes demandé
 	// on désactive la capacité de l'ia à chercher un chemin
+	// et on vérifie si un joueur est à proximité pour réactiver cette capacité
 	if (_keepPosition != 0) then {
 		if ((random 1) < _keepPosition) then {
 			_unit disableAI "PATH";
-		};
 
-		// on vérifie si des joueurs sont à proximité
-		// si oui, on réactive le PATH
-		[_unit, _sides] spawn {
-			private _unit	= _this select 0;
-			private _sides	= _this select 1;
-			private _loop	= true;
-			private _pos	= ASLToATL getPosASL _unit;
+			// on vérifie si des joueurs sont à proximité
+			// si oui, on réactive le PATH
+			[_unit, _sides, _resumeDistance] spawn {
+				private _unit			= _this select 0;
+				private _sides			= _this select 1;
+				private _resumeDistance	= _this select 2;
+				private _loop			= true;
+				private _pos			= ASLToATL getPosASL _unit;
 
-			// délais aléatoire pour éviter toutes les boucles des IA exécutées au même moment
-			sleep random PATH_ACTIVATION_LOOP_DELAY;
+				// délais aléatoire pour éviter toutes les boucles des IA exécutées au même moment
+				sleep random PATH_ACTIVATION_LOOP_DELAY;
 
-			// tant que l'unité est en vie
-			// on vérifie à intervalle régulier s'il y a des joueurs à proximité de l'unité
-			while {_loop && {alive _unit}} do {
-				private _players = [_pos, PATH_ACTIVATION_DISTANCE, _sides] call CORP_fnc_alivePlayersRadius;
+				// tant que l'unité est en vie
+				// on vérifie à intervalle régulier s'il y a des joueurs à proximité de l'unité
+				while {_loop && {alive _unit}} do {
+					private _players = [_pos, _resumeDistance, _sides] call CORP_fnc_alivePlayersRadius;
 
-				// si des joueurs ont été trouvés, on réactive le PATH
-				if (count _players > 0) then {
-					_unit enableAI "PATH";
-					_loop = false;
+					// si des joueurs ont été trouvés, on réactive le PATH
+					if (count _players > 0) then {
+						_unit enableAI "PATH";
+						_loop = false;
+					};
+
+					sleep PATH_ACTIVATION_LOOP_DELAY;
 				};
-
-				sleep PATH_ACTIVATION_LOOP_DELAY;
 			};
 		};
 	};
