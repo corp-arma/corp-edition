@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+	<Package name="advanced paradrop">
+		<Container name="modules">
+
+			<Key ID="STR_CORP_PARADROP_ADVANCED_DN">
+				<Original>Advaced paradrop</Original>
+				<French>Saut en parachute avancé</French>
+			</Key>
+
+			<!-- drop position -->
+			<Key ID="STR_CORP_PARADROP_ADVANCED_DROP_POSITION_DN">
+				<Original>Custom drop</Original>
+				<French>Saut personnalisé</French>
+			</Key>
+
+			<Key ID="STR_CORP_PARADROP_ADVANCED_DROP_POSITION_DESC">
+				<Original>Custom drop</Original>
+				<French>Saut personnalisé</French>
+			</Key>
+
+		</Container>
+
+		<Container name="ui">
+
+			<Key ID="STR_CORP_PARADROP_ELEVATION_TOOLTIP">
+				<Original>Elevation, you can use the mousewheel</Original>
+				<French>Altitude, vous pouvez utliser la molette de votre souris</French>
+			</Key>
+
+			<Key ID="STR_CORP_PARADROP_DROPZONE_TOOLTIP">
+				<Original>Double-click to set drop zone</Original>
+				<French>Double-cliquez pour définir le point de saut</French>
+			</Key>
+
+			<Key ID="STR_CORP_PARADROP_ADVANCED_PARADROP">
+				<Original>Drop</Original>
+				<French>Saut</French>
+			</Key>
+
+		</Container>
+	</Package>
+</Project>
