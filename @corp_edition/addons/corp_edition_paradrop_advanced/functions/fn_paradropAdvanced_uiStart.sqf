@@ -95,37 +95,43 @@ _close ctrlAddEventHandler ["MouseButtonDown", {
 
 // gestion du saut
 _jump ctrlAddEventHandler ["MouseButtonDown", {
-	// les variables globales doivent être passées au thread
-	// car en parallèle vient la destruction de celles-ci avec la fermeture du dialog
-	[CORP_var_paradropAdvanced_selectedDrop, CORP_var_paradropAdvanced_skyDivers] spawn {
-		_drop			= _this select 0;
-		_divers			= _this select 1;
-		_finalPosition	= _drop select 0;
-		_bearing		= _drop select 1;
-		_elevation		= _finalPosition select 2;
-		_finalPosition	= [_finalPosition, 500, _bearing + 180] call bis_fnc_relPos;
-		_playerPosition	= (getPosASL player) vectorAdd [0, 0, 100];
+	_dialog		= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+	_dropList	= _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
 
-		[_playerPosition, _finalPosition, _bearing] remoteExec ["CORP_fnc_paradropAdvanced_server", 2];
+	// si il-y-a bien un saut de selectionné
+	if ((lbCurSel _dropList) >= 0) then {
+		// les variables globales doivent être passées au thread
+		// car en parallèle vient la destruction de celles-ci avec la fermeture du dialog
+		[CORP_var_paradropAdvanced_selectedDrop, CORP_var_paradropAdvanced_skyDivers] spawn {
+			_drop			= _this select 0;
+			_divers			= _this select 1;
+			_finalPosition	= _drop select 0;
+			_bearing		= _drop select 1;
+			_elevation		= _finalPosition select 2;
+			_finalPosition	= [_finalPosition, 500, _bearing + 180] call bis_fnc_relPos;
+			_playerPosition	= (getPosASL player) vectorAdd [0, 0, 100];
 
-		// on attend que le C130 ait été téléporté à sa positon définitive
-		waitUntil {(count (nearestObjects [ASLToAGL _finalPosition, ["C130J_static_EP1"], 25])) > 0};
+			[_playerPosition, _finalPosition, _bearing] remoteExec ["CORP_fnc_paradropAdvanced_server", 2];
 
-		_c130j = (nearestObjects [ASLToAGL _finalPosition, ["C130J_static_EP1"], 25]) select 0;
+			// on attend que le C130 ait été téléporté à sa positon définitive
+			waitUntil {(count (nearestObjects [ASLToAGL _finalPosition, ["C130J_static_EP1"], 25])) > 0};
 
-		// on attend que le C130J soit sur le bon azimut
-		// ça prend un peu de temps à passer sur le réseau
-		waitUntil {(abs ((getDirVisual _c130j) - _bearing)) <= 2};
+			_c130j = (nearestObjects [ASLToAGL _finalPosition, ["C130J_static_EP1"], 25]) select 0;
 
-		sleep 1;
+			// on attend que le C130J soit sur le bon azimut
+			// ça prend un peu de temps à passer sur le réseau
+			waitUntil {(abs ((getDirVisual _c130j) - _bearing)) <= 2};
 
-		// embarquement des joueurs
-		{
-			[_c130j, 3 * _forEachIndex] remoteExec ["CORP_fnc_paradropAdvanced_client", _x];
-		} forEach _divers;
+			sleep 1;
+
+			// embarquement des joueurs
+			{
+				[_c130j, 3 * _forEachIndex] remoteExec ["CORP_fnc_paradropAdvanced_client", _x];
+			} forEach _divers;
+		};
+
+		closeDialog PARADROP_ADVANCED_DIALOG_IDD;
 	};
-
-	closeDialog PARADROP_ADVANCED_DIALOG_IDD;
 }];
 
 // dans le cas où le saut personnalisé est autorisé
