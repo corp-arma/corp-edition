@@ -8,13 +8,13 @@
 				<French>Saut en parachute avancé</French>
 			</Key>
 
-			<!-- drop position -->
-			<Key ID="STR_CORP_PARADROP_ADVANCED_DROP_POSITION_DN">
+			<!-- custom drop -->
+			<Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DN">
 				<Original>Custom drop</Original>
 				<French>Saut personnalisé</French>
 			</Key>
 
-			<Key ID="STR_CORP_PARADROP_ADVANCED_DROP_POSITION_DESC">
+			<Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DESC">
 				<Original>Custom drop</Original>
 				<French>Saut personnalisé</French>
 			</Key>
@@ -23,14 +23,14 @@
 
 		<Container name="ui">
 
-			<Key ID="STR_CORP_PARADROP_ELEVATION_TOOLTIP">
-				<Original>Elevation, you can use the mousewheel</Original>
-				<French>Altitude, vous pouvez utliser la molette de votre souris</French>
+			<Key ID="STR_CORP_PARADROP_ADVANCED_ELEVATION">
+				<Original>Elevation</Original>
+				<French>Altitude</French>
 			</Key>
 
-			<Key ID="STR_CORP_PARADROP_DROPZONE_TOOLTIP">
-				<Original>Double-click to set drop zone</Original>
-				<French>Double-cliquez pour définir le point de saut</French>
+			<Key ID="STR_CORP_PARADROP_ADVANCED_BEARING">
+				<Original>Bearing</Original>
+				<French>Azimut</French>
 			</Key>
 
 			<Key ID="STR_CORP_PARADROP_ADVANCED_PARADROP">

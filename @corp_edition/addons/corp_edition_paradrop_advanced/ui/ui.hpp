@@ -78,7 +78,7 @@ class CORP_ParadropAdvancedDialog {
 					w = safeZoneW * 0.09;
 					h = safeZoneH * 0.03;
 
-					text = "Altitude";
+					text = $STR_CORP_PARADROP_ADVANCED_ELEVATION;
 				};
 
 				class Elevation: BaseEdit {
@@ -98,7 +98,7 @@ class CORP_ParadropAdvancedDialog {
 					w = safeZoneW * 0.09;
 					h = safeZoneH * 0.03;
 
-					text = "Azimut";
+					text = $STR_CORP_PARADROP_ADVANCED_BEARING;
 				};
 
 				class Bearing: BaseEdit {
