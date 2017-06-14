@@ -7,10 +7,11 @@
 
 // déclaration des variables du module
 // CORP_var_paradropAdvanced_object, déclarée dans le code de l'action afin de récupérer l'objet drapeau et ainsi pouvoir récupérer les joueurs à proximité
-// CORP_var_paradropAdvanced_logic, déclarée dans l'initialisation du module, le nom de l'entité est la clé du tableau de sauts
+// CORP_var_paradropAdvanced_logic, déclarée dans le code de l'action afin de récupérer la logique du module qui contient les sauts
 CORP_var_paradropAdvanced_skyDivers			= [];
 CORP_var_paradropAdvanced_markers			= [];
 CORP_var_paradropAdvanced_selectedDrop		= [];
+CORP_var_paradropAdvanced_customDropMarker	= "";
 
 waitUntil {!isNull (findDisplay PARADROP_ADVANCED_DIALOG_IDD)};
 
@@ -136,7 +137,7 @@ if (CORP_var_paradropAdvanced_logic getVariable "CustomDrop") then {
 		_position set [2,  (parseNumber (ctrlText PARADROP_ADVANCED_ELEVATION_IDC))];
 
 		// dans le cas où le marqueur personalisé n'existe pas encore, on le créé
-		if (isNil {CORP_var_paradropAdvanced_customDropMarker}) then {
+		if (CORP_var_paradropAdvanced_customDropMarker == "") then {
 			CORP_var_paradropAdvanced_customDropMarker = createMarkerLocal ["paradropAdvanced_customMarker", _position];
 			CORP_var_paradropAdvanced_customDropMarker setMarkerShapeLocal "ICON";
 			CORP_var_paradropAdvanced_customDropMarker setMarkerTypeLocal "mil_arrow2";
@@ -174,7 +175,7 @@ if (CORP_var_paradropAdvanced_logic getVariable "CustomDrop") then {
 		_control ctrlSetText (str _elevation);
 
 		// si le saut personnalisé existe
-		if (!isNil {CORP_var_paradropAdvanced_customDropMarker}) then {
+		if (CORP_var_paradropAdvanced_customDropMarker != "") then {
 			// on actualise les données de l'élément de la liste
 			_data = call compile (_dropList lbData (count (CORP_var_paradropAdvanced_logic getVariable "Drops")));
 			(_data select 0) set [2, _elevation];
@@ -205,7 +206,7 @@ if (CORP_var_paradropAdvanced_logic getVariable "CustomDrop") then {
 		_control ctrlSetText (str _bearing);
 
 		// si le saut personnalisé existe
-		if (!isNil {CORP_var_paradropAdvanced_customDropMarker}) then {
+		if (CORP_var_paradropAdvanced_customDropMarker != "") then {
 			// on actualise les données de l'élément de la liste
 			_data = call compile (_dropList lbData (count (CORP_var_paradropAdvanced_logic getVariable "Drops")));
 			_data set [1, _bearing];
