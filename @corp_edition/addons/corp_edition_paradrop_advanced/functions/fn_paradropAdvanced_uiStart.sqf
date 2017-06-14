@@ -239,5 +239,7 @@ _close ctrlAddEventHandler ["MouseButtonDown", {
 	closeDialog PARADROP_DIALOG_IDD;
 }];
 
-// selection du premier saut par défaut
-_dropList lbSetCurSel 0;
+// selection du premier saut par défaut s'il-y-a au moins 1 saut
+if (count (CORP_var_paradropAdvanced_logic getVariable "Drops") > 0) then {
+	_dropList lbSetCurSel 0;
+};
