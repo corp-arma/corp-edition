@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		author = "CORP Modding Studio";
 		requiredVersion = 1.66;
-		requiredAddons[] = {};
+		requiredAddons[] = {"A3_3DEN"};
 	};
 };
 
@@ -35,6 +35,28 @@ class CfgFactionClasses {
 	class NO_CATEGORY;
 	class CORP_Modules: NO_CATEGORY {
 		displayName = "CORP Modules";
+	};
+};
+
+class Cfg3DEN {
+	class Attributes {
+		class Controls;
+		class Title;
+		class Value;
+		class Edit;
+		class SliderDistance;
+
+		class SliderAddactionDistance: SliderDistance {
+			class Controls: Controls {
+				class Title: Title {};
+				class Value: Value {
+					sliderRange[] = {1, 15};
+					lineSize = 1;
+					sliderStep = 1;
+				};
+				class Edit: Edit {};
+			};
+		};
 	};
 };
 

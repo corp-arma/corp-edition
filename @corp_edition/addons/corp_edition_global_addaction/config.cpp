@@ -24,28 +24,6 @@ class CfgFunctions {
 	};
 };
 
-class Cfg3DEN {
-	class Attributes {
-		class Controls;
-		class Title;
-		class Value;
-		class Edit;
-		class SliderDistance;
-
-		class SliderGlobalAddactionDistance: SliderDistance {
-			class Controls: Controls {
-				class Title: Title {};
-				class Value: Value {
-					sliderRange[] = {1, 15};
-					lineSize = 1;
-					sliderStep = 1;
-				};
-				class Edit: Edit {};
-			};
-		};
-	};
-};
-
 class CfgVehicles {
 	class Logic;
 	class Module_F: Logic {
@@ -103,7 +81,7 @@ class CfgVehicles {
 				description = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC;
 				typeName = "NUMBER";
 				defaultValue = "3";
-				control = "SliderGlobalAddactionDistance";
+				control = "SliderAddactionDistance";
 			};
 
 			class DeleteObject: Checkbox {
