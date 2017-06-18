@@ -35,6 +35,7 @@ _group setFormation (selectRandom _formations);
 _group setCombatMode "SAFE";
 _group setBehaviour "RED";
 _group setSpeedMode "LIMITED";
+_group deleteGroupWhenEmpty true;
 
 {
 	_wp = _group addWaypoint [_waypointsPositions select _forEachIndex, 0];
