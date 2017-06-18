@@ -46,6 +46,7 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 	private _dir		= _position select 2;
 
 	private _group = createGroup _side;
+	_group deleteGroupWhenEmpty true;
 	private _wp = _group addWaypoint [_pos, 0];
 	deleteWaypoint [_group, (count (waypoints _group)) - 1];
 	private _unit = _group createUnit [selectRandom _units, _building modelToWorld _pos, [], 0, "CAN_COLLIDE"];
