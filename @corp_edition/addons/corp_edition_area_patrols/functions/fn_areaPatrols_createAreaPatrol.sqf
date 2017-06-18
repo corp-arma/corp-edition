@@ -26,16 +26,16 @@ private _group = [
 	_units
 ] call BIS_fnc_spawnGroup;
 
-// on attribue les points de passage
+_group deleteGroupWhenEmpty true;
 deleteWaypoint [_group, 0];
 
+// on attribue les points de passage
 private _formations = ["STAG COLUMN","VEE","ECH LEFT","ECH RIGHT","COLUMN","LINE"];
 
 _group setFormation (selectRandom _formations);
 _group setCombatMode "SAFE";
 _group setBehaviour "RED";
 _group setSpeedMode "LIMITED";
-_group deleteGroupWhenEmpty true;
 
 {
 	_wp = _group addWaypoint [_waypointsPositions select _forEachIndex, 0];
