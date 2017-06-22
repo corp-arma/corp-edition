@@ -93,7 +93,7 @@ if !(isNil {CORP_var_buildingsOccupation_occupations}) then {
 // traitement sur les unités créées
 {
 	// activation/désactivation de la simulation dynamique pour les unités créées
-	_x enableDynamicSimulation _dynamicSimulation;
+	(group _x) enableDynamicSimulation _dynamicSimulation;
 
 	// copie de l'équipement d'une des unités synchronisée
 	_x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
