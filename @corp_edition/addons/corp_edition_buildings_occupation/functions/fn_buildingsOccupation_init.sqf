@@ -82,10 +82,15 @@ if (hasInterface) then {
 // création de l'occupation
 private _occupation = [getPosASL _logic, (_area select 0) max (_area select 1), _numberOfUnits, _side, [_units, {typeOf _x}] call CBA_fnc_filter, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
 
+// stockage des unitiés créées dans la logique
+_logic setVariable ["createdUnits", _occupation];
+
+// si débug demandé, on pousses les unités créées dans le tableau des unités à débuger
 if !(isNil {CORP_var_buildingsOccupation_occupations}) then {
 	CORP_var_buildingsOccupation_occupations pushBack _occupation;
 };
 
+// traitement sur les unités créées
 {
 	// activation/désactivation de la simulation dynamique pour les unités créées
 	_x enableDynamicSimulation _dynamicSimulation;
