@@ -15,6 +15,7 @@ class CfgFunctions {
 			file = "\corp_edition_buildings_occupation\functions";
 			class BuildingsOccupation_Init {};
 			class BuildingsOccupation_Occupation {};
+			class BuildingsOccupation_getRelPos {};
 		};
 	};
 };
