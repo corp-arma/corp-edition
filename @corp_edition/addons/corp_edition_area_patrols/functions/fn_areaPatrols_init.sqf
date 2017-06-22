@@ -63,6 +63,8 @@ if (_debug && {hasInterface}) then {
 	_marker setMarkerColor ([_side, "STRING"] call CORP_fnc_getSideColor);
 };
 
+private _patrols = [];
+
 // on créé les patrouilles
 for "_i" from 0 to (_numberOfGroups - 1) do {
 	private _unitsResized = [];
@@ -73,6 +75,7 @@ for "_i" from 0 to (_numberOfGroups - 1) do {
 	};
 
 	private _group = [getPosASL _logic, _area, _side, [_unitsResized, {typeOf _x}] call CBA_fnc_filter, _waypointsPerGroup] call CORP_fnc_areaPatrols_createAreaPatrol;
+	_patrols pushBack _group;
 
 	// debug
 	if !(isNil {CORP_var_areaPatrols_patrols}) then {
@@ -87,3 +90,6 @@ for "_i" from 0 to (_numberOfGroups - 1) do {
 		_x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
 	} forEach (units _group);
 };
+
+// stockage des groupes créés dans le module
+_logic setVariable ["createdGroups", _patrols];
