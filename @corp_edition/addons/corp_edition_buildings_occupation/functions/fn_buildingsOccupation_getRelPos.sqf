@@ -11,10 +11,10 @@ if (_dir < 0) then {
 	_dir = _dir + 360;
 };
 
-if (isNil {CORP_buildingsOccupation_positions}) then {
-	CORP_buildingsOccupation_positions = "";
+if (isNil {CORP_var_buildingsOccupation_positions}) then {
+	CORP_var_buildingsOccupation_positions = "";
 };
 
-CORP_buildingsOccupation_positions = CORP_buildingsOccupation_positions + (format ["{{%1,%2,%3},%4},%5", _pos select 0, _pos select 1, _pos select 2, floor _dir, endl]);
+CORP_var_buildingsOccupation_positions = CORP_var_buildingsOccupation_positions + (format ["{{%1,%2,%3},%4},%5", _pos select 0, _pos select 1, _pos select 2, floor _dir, endl]);
 
-copyToClipboard CORP_buildingsOccupation_positions;
+copyToClipboard CORP_var_buildingsOccupation_positions;
