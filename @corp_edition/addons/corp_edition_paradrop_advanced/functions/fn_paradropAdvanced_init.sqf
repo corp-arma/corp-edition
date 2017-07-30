@@ -6,7 +6,6 @@
 private _logic		= param [0, objNull, [objNull]];
 private _objects	= param [1, [], [[]]];
 
-//private _customDrop	= _logic getVariable ["CustomDrop", false];
 private _actions	= [];
 private _planes 	= [];
 
