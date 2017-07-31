@@ -1107,3 +1107,5 @@ class US_WarfareBHeavyFactory_Base_EP1 {
 		{{2.104,-2.63086,0.474643},180}
 	};
 };
+
+class Land_A_Office01_EP1: Land_A_Office02 {};
