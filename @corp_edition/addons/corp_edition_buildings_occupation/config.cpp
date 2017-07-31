@@ -137,6 +137,9 @@ class CfgCORP {
 			// bâtiments de Tanoa
 			#include "includes\tanoa.hpp"
 
+			// bâtiments de Tanoa
+			#include "includes\malden.hpp"
+
 			// bâtiments Tchernarus
 			#include "includes\european.hpp"
 
