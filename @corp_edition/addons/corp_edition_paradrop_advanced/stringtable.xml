@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="advanced paradrop">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_DN">
+                <Original>Advaced paradrop</Original>
+                <French>Saut en parachute avancé</French>
+            </Key>
+
+            <!-- custom drop -->
+            <Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DN">
+                <Original>Custom drop</Original>
+                <French>Saut personnalisé</French>
+            </Key>
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DESC">
+                <Original>Custom drop</Original>
+                <French>Saut personnalisé</French>
+            </Key>
+
+        </Container>
+
+        <Container name="ui">
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_ELEVATION">
+                <Original>Elevation</Original>
+                <French>Altitude</French>
+            </Key>
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_BEARING">
+                <Original>Bearing</Original>
+                <French>Azimut</French>
+            </Key>
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_PARADROP">
+                <Original>Drop</Original>
+                <French>Saut</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>

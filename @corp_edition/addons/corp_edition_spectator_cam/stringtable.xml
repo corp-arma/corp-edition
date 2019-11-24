@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="spectator cam">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_SPECTATOR_CAM_DN">
+                <Original>Spectator cam</Original>
+                <French>Caméra spectateur</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>

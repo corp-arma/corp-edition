@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="area patrols">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_AREA_PATROLS_DN">
+                <Original>Area Patrols</Original>
+                <French>Patrouilles de zone</French>
+            </Key>
+
+            <!-- groups per area -->
+            <Key ID="STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DN">
+                <Original>Number of groups</Original>
+                <French>Nombre de groupes</French>
+            </Key>
+
+            <Key ID="STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DESC">
+                <Original>Number of groups</Original>
+                <French>Nombre de groupes</French>
+            </Key>
+
+            <!-- units per group -->
+            <Key ID="STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DN">
+                <Original>Max units per group</Original>
+                <French>Unités max par groupe</French>
+            </Key>
+
+            <Key ID="STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DESC">
+                <Original>Max number of units per group</Original>
+                <French>Nombre d'unités max par groupe</French>
+            </Key>
+
+            <!-- waypoints per group -->
+            <Key ID="STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DN">
+                <Original>Waypoints per group</Original>
+                <French>Points de passage par groupe</French>
+            </Key>
+
+            <Key ID="STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DESC">
+                <Original>Number of waypoints per group</Original>
+                <French>Nombre de points de passage par groupe</French>
+            </Key>
+
+            <!-- dynamic simulation -->
+            <Key ID="STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DN">
+                <Original>Dynamic simulation</Original>
+                <French>Simulation dynamique</French>
+            </Key>
+
+            <Key ID="STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DESC">
+                <Original>Enables dynamic simulation for created groups</Original>
+                <French>activer la Simulation Dynamique pour les groupes créés par le module</French>
+            </Key>
+
+            <!-- debug -->
+            <Key ID="STR_CORP_AREA_PATROLS_DEBUG_DN">
+                <Original>Debug</Original>
+                <French>Débug</French>
+            </Key>
+
+            <Key ID="STR_CORP_AREA_PATROLS_DEBUG_DESC">
+                <Original>Draws areas and AIs of map</Original>
+                <French>Sur carte, déssine les zones et les IA créées</French>
+            </Key>
+
+        </Container>
+
+    </Package>
+</Project>

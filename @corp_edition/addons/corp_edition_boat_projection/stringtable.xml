@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="boat projection">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_BOAT_PROJECTION_DN">
+                <Original>Boat projection</Original>
+                <French>Projection en embarcation</French>
+            </Key>
+
+            <!-- number of units -->
+            <Key ID="STR_CORP_BOAT_PROJECTION_COAST_DISTANCE_DN">
+                <Original>Coast distance</Original>
+                <French>Distance côte</French>
+            </Key>
+
+            <Key ID="STR_CORP_BOAT_PROJECTION_COAST_DISTANCE_DESC">
+                <Original>Minimum distance to coast</Original>
+                <French>Distance minimum de la côte</French>
+            </Key>
+
+        </Container>
+
+        <Container name="ui">
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_MAP_TOOLTIP">
+                <Original>Doucle-clik to set Projection position</Original>
+                <French>Double-cliquez pour définir le point de projection</French>
+            </Key>
+
+            <Key ID="STR_CORP_PARADROP_ADVANCED_PROJECTION">
+                <Original>Projection</Original>
+                <French>Projection</French>
+            </Key>
+
+        </Container>
+
+    </Package>
+</Project>

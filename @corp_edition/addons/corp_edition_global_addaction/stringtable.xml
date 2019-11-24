@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="global addaction">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_DN">
+                <Original>Global addAction</Original>
+                <French>AddAction globale</French>
+            </Key>
+
+            <!-- action text -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DN">
+                <Original>Action text</Original>
+                <French>Texte de l'action</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DESC">
+                <Original>Action text</Original>
+                <French>Texte de l'action</French>
+            </Key>
+
+            <!-- server expression -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN">
+                <Original>Server expression</Original>
+                <French>Expression serveur</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DESC">
+                <Original>Server expression</Original>
+                <French>Expression serveur</French>
+            </Key>
+
+            <!-- client expression -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DN">
+                <Original>Client expression</Original>
+                <French>Expression client</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DESC">
+                <Original>Client expression</Original>
+                <French>Expression client</French>
+            </Key>
+
+            <!-- action distance -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN">
+                <Original>Action distance</Original>
+                <French>Distance de l'action</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC">
+                <Original>Action distance</Original>
+                <French>Distance de l'action</French>
+            </Key>
+
+            <!-- delete object -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_DN">
+                <Original>Delete object</Original>
+                <French>Supprimer l'objet</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_DESC">
+                <Original>Delete object</Original>
+                <French>Supprimer l'objet</French>
+            </Key>
+
+            <!-- remove action -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_DN">
+                <Original>Remove action</Original>
+                <French>Retirer l'action</French>
+            </Key>
+
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_DESC">
+                <Original>Remove action</Original>
+                <French>Retirer l'action</French>
+            </Key>
+
+        </Container>
+
+    </Package>
+</Project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="teleport">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_TELEPORT_DN">
+                <Original>Teleport to mate</Original>
+                <French>Téléportation vers un cooéquiper</French>
+            </Key>
+
+        </Container>
+
+        <Container name="ui">
+
+            <Key ID="STR_CORP_TELEPORT_TELEPORT">
+                <Original>Teleport</Original>
+                <French>Téléportation</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>

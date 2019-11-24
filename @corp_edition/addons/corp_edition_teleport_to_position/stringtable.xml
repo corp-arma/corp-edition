@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="teleportToPosition">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_DN">
+                <Original>Teleport to position</Original>
+                <French>Téléportation vers une position</French>
+            </Key>
+
+        </Container>
+
+        <Container name="ui">
+
+            <!-- action text -->
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DN">
+                <Original>Action text</Original>
+                <French>Texte de l'action</French>
+            </Key>
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DESC">
+                <Original>Action text</Original>
+                <French>Texte de l'action</French>
+            </Key>
+
+            <!-- action distance -->
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DN">
+                <Original>Action distance</Original>
+                <French>Distance de l'action</French>
+            </Key>
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DESC">
+                <Original>Action distance</Original>
+                <French>Distance de l'action</French>
+            </Key>
+
+            <!-- teleport position -->
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DN">
+                <Original>Teleport position (ASL)</Original>
+                <French>Position de téléportation (ASL)</French>
+            </Key>
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DESC">
+                <Original>Teleport position (ASL)</Original>
+                <French>Position de téléportation (ASL)</French>
+            </Key>
+
+            <!-- teleport direction -->
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_DN">
+                <Original>Teleport direction</Original>
+                <French>Direction de téléportation</French>
+            </Key>
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_DESC">
+                <Original>Teleport direction</Original>
+                <French>Direction de téléportatio</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>

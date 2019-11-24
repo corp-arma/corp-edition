@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="lightpoint">
+        <Container name="modules">
+
+            <Key ID="STR_CORP_LIGHTPOINT_DN">
+                <Original>Light</Original>
+                <French>Lumière</French>
+            </Key>
+
+            <!-- number of units -->
+            <Key ID="STR_CORP_LIGHTPOINT_RED_DN">
+                <Original>Red</Original>
+                <French>Rouge</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_RED_DESC">
+                <Original>Red</Original>
+                <French>Rouge</French>
+            </Key>
+
+            <!-- green -->
+            <Key ID="STR_CORP_LIGHTPOINT_GREEN_DN">
+                <Original>Green</Original>
+                <French>Vert</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_GREEN_DESC">
+                <Original>Green</Original>
+                <French>Vert</French>
+            </Key>
+
+            <!-- blue -->
+            <Key ID="STR_CORP_LIGHTPOINT_BLUE_DN">
+                <Original>Blue</Original>
+                <French>Bleu</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_BLUE_DESC">
+                <Original>Blue</Original>
+                <French>Bleu</French>
+            </Key>
+
+            <!-- brightness -->
+            <Key ID="STR_CORP_LIGHTPOINT_BRIGHTNESS_DN">
+                <Original>Brightness</Original>
+                <French>Intensité</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_BRIGHTNESS_DESC">
+                <Original>Brightness</Original>
+                <French>Intensité</French>
+            </Key>
+
+            <!-- use flare -->
+            <Key ID="STR_CORP_LIGHTPOINT_USE_FLARE_DN">
+                <Original>Flare</Original>
+                <French>Halo</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_USE_FLARE_DESC">
+                <Original>Use flare</Original>
+                <French>Utiliser halo</French>
+            </Key>
+
+            <!-- flare size -->
+            <Key ID="STR_CORP_LIGHTPOINT_FLARE_SIZE_DN">
+                <Original>Flare size</Original>
+                <French>Taille halo</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_FLARE_SIZE_DESC">
+                <Original>Flare size</Original>
+                <French>Taille halo</French>
+            </Key>
+
+            <!-- flare max distance -->
+            <Key ID="STR_CORP_LIGHTPOINT_FLARE_MAX_DISTANCE_DN">
+                <Original>Flare max distance</Original>
+                <French>Distance max halo</French>
+            </Key>
+
+            <Key ID="STR_CORP_LIGHTPOINT_FLARE_MAX_DISTANCE_DESC">
+                <Original>Flare max distance</Original>
+                <French>Distance max halo</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="CORP Edition Addons">
+    <Package name="core">
+
+        <Container name="ui">
+
+            <Key ID="STR_CORP_CORE_CANCEL">
+                <Original>Cancel</Original>
+                <French>Annuler</French>
+            </Key>
+
+            <Key ID="STR_CORP_CORE_CONFIRM">
+                <Original>Confirm</Original>
+                <French>Confirmer</French>
+            </Key>
+
+        </Container>
+
+        <Container name="errors">
+
+            <Key ID="STR_CORP_CORE_NO_UNIT_SYNCHED">
+                <Original>No unit synched to module</Original>
+                <French>Aucune unité synchronisée au module</French>
+            </Key>
+
+            <Key ID="STR_CORP_CORE_NO_TRIGGER_SYNCHED">
+                <Original>No trigger synched to module</Original>
+                <French>Aucun déclencheur synchronisé au module</French>
+            </Key>
+
+            <Key ID="STR_CORP_CORE_NO_AREA_SYNCHED">
+                <Original>No area synched to module</Original>
+                <French>Aucune zone synchronisée au module</French>
+            </Key>
+
+        </Container>
+    </Package>
+</Project>
