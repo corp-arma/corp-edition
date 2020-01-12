@@ -13,7 +13,7 @@ class Land_House_Small_02_F {
         {{-1.52747,-5.55151,-0.714201},180},
         {{0.0430908,-3.99121,-0.714201},90}
     };
-}
+};
 
 class Land_House_Small_04_F {
     positions[] = {

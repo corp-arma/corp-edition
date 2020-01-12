@@ -1047,7 +1047,7 @@ class BMP2_HQ_TK_unfolded_Base_EP1 {
     positions[] = {
         {{-3.36035,2.57715,0.251439},0},
         {{-3.17725,-1.42139,0.251439},180},
-        {{-4.229,-0.0493164,0.251439},270},
+        {{-4.229,-0.0493164,0.251439},270}
     };
 };
 class BRDM2_HQ_TK_GUE_unfolded_Base_EP1: BMP2_HQ_TK_unfolded_Base_EP1 {};
