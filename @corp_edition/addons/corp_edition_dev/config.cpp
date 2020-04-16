@@ -3,7 +3,10 @@ class CfgPatches {
         units[] = {"CORP_Module_Dev"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -12,7 +15,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionDev {
-            file = "\corp_edition_dev\functions";
+            file = "\corp_edition\corp_edition_dev\functions";
             class Dev_Init {};
         };
     };
@@ -29,7 +32,7 @@ class CfgVehicles {
     class CORP_Module_Dev: Module_F {
         scope = 2;
         displayName = $STR_CORP_DEV_DN;
-        icon = "\corp_edition_dev\icon.paa";
+        icon = "\corp_edition\corp_edition_dev\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_dev_init";

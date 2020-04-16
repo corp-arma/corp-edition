@@ -1,9 +1,12 @@
 class CfgPatches {
     class CORP_Edition_Teleport_To_Position {
-        units[] = {"CORP_Module_TeleportToPosition"};
+        units[] = { "CORP_Module_TeleportToPosition" };
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -12,7 +15,8 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionTeleportToPosition {
-            file = "\corp_edition_teleport_to_position\functions";
+            file = "\corp_edition\corp_edition_teleport_to_position\functions";
+
             class TeleportToPosition_Init {};
         };
     };
@@ -33,7 +37,7 @@ class CfgVehicles {
     class CORP_Module_TeleportToPosition: Module_F {
         scope = 2;
         displayName = $STR_CORP_TELEPORT_TO_POSITION_DN;
-        icon = "\corp_edition_teleport_to_position\icon.paa";
+        icon = "\corp_edition\corp_edition_teleport_to_position\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_teleportToPosition_init";

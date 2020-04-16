@@ -3,7 +3,10 @@ class CfgPatches {
         units[] = {"CORP_Module_GearSystem"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -12,7 +15,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionGearSystem {
-            file = "\corp_edition_gear_system\functions";
+            file = "\corp_edition\corp_edition_gear_system\functions";
             class GearSystem_Init {};
         };
     };
@@ -29,7 +32,7 @@ class CfgVehicles {
     class CORP_Module_GearSystem: Module_F {
         scope = 2;
         displayName = $STR_CORP_GEAR_SYSTEM_DN;
-        icon = "\corp_edition_gear_system\icon.paa";
+        icon = "\corp_edition\corp_edition_gear_system\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_gearSystem_init";

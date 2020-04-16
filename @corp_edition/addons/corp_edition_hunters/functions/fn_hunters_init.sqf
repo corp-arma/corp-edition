@@ -19,12 +19,12 @@ private _trigger = _triggers select 0;
 private _units   = _units call CORP_fnc_getGroupedUnits;
 private _side    = side (_units select 0);
 
-// Holds every parameters of every hunts.
+// ce tableau contient toutes les paramètres de toutes les chasses
 if (isNil {CORP_var_hunters_hunts}) then {
     CORP_var_hunters_hunts = [];
 };
 
-// Debug, draws units and their waypoints on map.
+// debug, responsable de dessiner les unités et leurs waypoints sur carte
 if (_debug && {hasInterface}) then {
     if (isNil {CORP_var_hunters_hunters}) then {
         CORP_var_hunters_hunters = grpNull;
@@ -33,7 +33,7 @@ if (_debug && {hasInterface}) then {
             private _map		= _this select 0;
             private _sideColor	= [side CORP_var_hunters_hunters, "ARRAY"] call CORP_fnc_getSideColor;
 
-            // Draw units icons.
+            // on dessine les icônes des chasseurs
             {
                 _map drawIcon [
                     getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
@@ -45,7 +45,7 @@ if (_debug && {hasInterface}) then {
                 ];
             } forEach (units CORP_var_hunters_hunters);
 
-            // Draw waypoints.
+            // on dessine le waypoint sur carte
             private _waypoints = waypoints CORP_var_hunters_hunters;
 
             if (count _waypoints > 0) then {
@@ -55,11 +55,11 @@ if (_debug && {hasInterface}) then {
     };
 };
 
-// Store the state of this hunt.
+// on enregistre l'état de cette chasse
 [CORP_var_hunters_hunts, str _logic, [_huntingUnits, _respawnDistance, _condition, _units]] call BIS_fnc_setToPairs;
 
-// Create an empty group.
+// création d'un groupe vide
 private _group = createGroup _side;
 
-// Create the hunt.
+// création de la chasse
 [_group, _logic, getPosASL _trigger] call CORP_fnc_hunters_checkAndCreateHunters;

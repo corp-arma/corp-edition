@@ -5,10 +5,13 @@
 
 class CfgPatches {
     class CORP_Edition_Paradrop_Advanced {
-        units[] = {"CORP_Module_Paradrop_Advanced"};
+        units[] = { "CORP_Module_Paradrop_Advanced" };
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -17,7 +20,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionParadropAdvanced {
-            file = "\corp_edition_paradrop_advanced\functions";
+            file = "\corp_edition\corp_edition_paradrop_advanced\functions";
             class ParadropAdvanced_init {};
             class ParadropAdvanced_uiStart {};
             class ParadropAdvanced_uiStop {};
@@ -30,8 +33,8 @@ class CfgFunctions {
 class CfgSounds {
     class C130Engine {
         name = "C130 Engine";
-        sound[] = {"\corp_edition_paradrop_advanced\data\sounds\ext_engine_low.wss", 1, 1};
-        titles[] = {0, ""};
+        sound[] = { "\corp_edition\corp_edition_paradrop_advanced\data\sounds\ext_engine_low.wss", 1, 1 };
+        titles[] = { 0, "" };
     };
 };
 
@@ -50,7 +53,7 @@ class CfgVehicles {
     class CORP_Module_Paradrop_Advanced: Module_F {
         scope = 2;
         displayName = $STR_CORP_PARADROP_ADVANCED_DN;
-        icon = "\corp_edition_paradrop_advanced\icon.paa";
+        icon = "corp_edition\corp_edition_paradrop_advanced\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_paradropAdvanced_init";

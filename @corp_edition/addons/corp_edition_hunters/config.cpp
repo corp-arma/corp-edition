@@ -3,7 +3,12 @@ class CfgPatches {
         units[] = {"CORP_Module_Hunters"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_arrays"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "A3_3DEN",
+            "corp_edition_core",
+            "cba_arrays"
+        };
     };
 };
 
@@ -12,7 +17,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionHunters {
-            file = "\corp_edition_hunters\functions";
+            file = "\corp_edition\corp_edition_hunters\functions";
             class Hunters_Init {};
             class Hunters_CheckAndCreateHunters {};
             class Hunters_HuntersBehaviour {};
@@ -31,11 +36,13 @@ class Cfg3DEN {
         class SliderHuntersDistance: SliderDistance {
             class Controls: Controls {
                 class Title: Title {};
+
                 class Value: Value {
                     sliderRange[] = {100, 600};
                     lineSize = 50;
                     sliderStep = 50;
                 };
+
                 class Edit: Edit {};
             };
         };
@@ -59,7 +66,7 @@ class CfgVehicles {
     class CORP_Module_Hunters: Module_F {
         scope = 2;
         displayName = $STR_CORP_HUNTERS_DN;
-        icon = "\corp_edition_hunters\icon.paa";
+        icon = "\corp_edition\corp_edition_hunters\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_hunters_init";

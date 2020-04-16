@@ -17,7 +17,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionBoatProjection {
-            file = "\corp_edition_boat_projection\functions";
+            file = "\corp_edition\corp_edition_boat_projection\functions";
             class BoatProjection_Init {};
             class BoatProjection_UiStart {};
             class BoatProjection_UiStop {};
@@ -64,7 +64,7 @@ class CfgVehicles {
     class CORP_Module_BoatProjection: Module_F {
         scope = 2;
         displayName = $STR_CORP_BOAT_PROJECTION_DN;
-        icon = "\corp_edition_boat_projection\icon.paa";
+        icon = "\corp_edition\corp_edition_boat_projection\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_boatProjection_init";
@@ -92,8 +92,8 @@ class CfgVehicles {
 class CfgCORP {
     class BoatProjection {
         boats[] = {
-            {"B_G_Boat_Transport_01_F", 5},
-            {"I_C_Boat_Transport_02_F", 8}
+            { "B_G_Boat_Transport_01_F", 5 },
+            { "I_C_Boat_Transport_02_F", 8 }
         };
     };
 };

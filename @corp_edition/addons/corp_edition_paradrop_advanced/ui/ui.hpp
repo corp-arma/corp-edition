@@ -55,7 +55,6 @@ class CORP_ParadropAdvancedDialog {
         class CustomDropParams: RscControlsGroup {
             idc = PARADROP_ADVANCED_CUSTOM_DROP_PARAMS_CONTROLS_GROUP_IDC;
             type = 15;
-            idc = -1;
 
             x = safeZoneX + safeZoneW * 0.305;
             y = safeZoneY + safeZoneH * 0.475;

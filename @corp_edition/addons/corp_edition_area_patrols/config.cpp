@@ -16,7 +16,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionAreaPatrols {
-            file = "\corp_edition_area_patrols\functions";
+            file = "\corp_edition\corp_edition_area_patrols\functions";
             class AreaPatrols_init {};
             class AreaPatrols_createAreaPatrol {};
         };
@@ -39,7 +39,7 @@ class CfgVehicles {
     class CORP_Module_AreaPatrols: Module_F {
         scope = 2;
         displayName = $STR_CORP_AREA_PATROLS_DN;
-        icon = "\corp_edition_area_patrols\icon.paa";
+        icon = "\corp_edition\corp_edition_area_patrols\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_AreaPatrols_init";

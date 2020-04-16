@@ -5,10 +5,16 @@
 
 class CfgPatches {
     class CORP_Edition_Lightpoint {
-        units[] = {"CORP_Module_Lightpoint"};
+        units[] = {
+            "CORP_Module_Lightpoint"
+        };
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "A3_3DEN",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -17,7 +23,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionLightpoint {
-            file = "\corp_edition_lightpoint\functions";
+            file = "\corp_edition\corp_edition_lightpoint\functions";
             class Lightpoint_Init {};
         };
     };
@@ -106,7 +112,7 @@ class CfgVehicles {
     class CORP_Module_Lightpoint: Module_F {
         scope = 2;
         displayName = $STR_CORP_LIGHTPOINT_DN;
-        icon = "\corp_edition_lightpoint\icon.paa";
+        icon = "\corp_edition\corp_edition_lightpoint\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_lightpoint_init";

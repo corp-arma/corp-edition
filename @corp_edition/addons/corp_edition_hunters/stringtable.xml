@@ -17,6 +17,7 @@
             <Key ID="STR_CORP_HUNTERS_HUNTING_UNITS_DESC">
                 <Original>Number of hunting units</Original>
                 <French>Nombre d'unités en chasse</French>
+                <Italian>Nombre d'unités en chasse</Italian>
             </Key>
 
             <!-- respawn distance -->

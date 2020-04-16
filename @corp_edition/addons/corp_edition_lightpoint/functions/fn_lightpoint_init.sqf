@@ -52,7 +52,7 @@ switch _mode do {
         _lightsource setLightFlareMaxDistance _flareMaxDistance;
     };
 
-    // Deleting module.
+    // supression du module
     case "unregisteredFromWorld3DEN": {
         deleteVehicle (_logic getVariable "lightpoint");
     };

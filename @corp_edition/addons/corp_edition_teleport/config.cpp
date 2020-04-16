@@ -3,7 +3,10 @@ class CfgPatches {
         units[] = {"CORP_Module_Teleport"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -12,7 +15,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionTeleport {
-            file = "\corp_edition_teleport\functions";
+            file = "\corp_edition\corp_edition_teleport\functions";
             class Teleport_Init {};
             class Teleport_UiStart {};
         };
@@ -30,7 +33,7 @@ class CfgVehicles {
     class CORP_Module_Teleport: Module_F {
         scope = 2;
         displayName = $STR_CORP_TELEPORT_DN;
-        icon = "\corp_edition_teleport\icon.paa";
+        icon = "\corp_edition\corp_edition_teleport\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_teleport_init";

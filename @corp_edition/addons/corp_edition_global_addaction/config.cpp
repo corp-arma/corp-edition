@@ -8,7 +8,12 @@ class CfgPatches {
         units[] = {"CORP_Module_GlobalAddaction"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_strings"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "A3_3DEN",
+            "corp_edition_core",
+            "cba_strings"
+        };
     };
 };
 
@@ -17,7 +22,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionGlobalAddAction {
-            file = "\corp_edition_global_addaction\functions";
+            file = "\corp_edition\corp_edition_global_addaction\functions";
             class GlobalAddAction_Init {};
             class GlobalAddAction_AddAction {};
         };
@@ -40,7 +45,7 @@ class CfgVehicles {
     class CORP_Module_GlobalAddaction: Module_F {
         scope = 2;
         displayName = $STR_CORP_GLOBAL_ADDACTION_DN;
-        icon = "\corp_edition_global_addaction\icon.paa";
+        icon = "\corp_edition\corp_edition_global_addaction\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_globalAddAction_init";

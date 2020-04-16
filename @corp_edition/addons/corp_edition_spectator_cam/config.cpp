@@ -1,9 +1,12 @@
 class CfgPatches {
     class CORP_Edition_SpectatorCam {
-        units[] = {"CORP_Module_SpectatorCam"};
+        units[] = { "CORP_Module_SpectatorCam" };
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "corp_edition_core"
+        };
     };
 };
 
@@ -12,7 +15,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionSpectatorCam {
-            file = "\corp_edition_spectator_Cam\functions";
+            file = "\corp_edition\corp_edition_spectator_Cam\functions";
             class SpectatorCam_Init {};
         };
     };
@@ -29,7 +32,7 @@ class CfgVehicles {
     class CORP_Module_SpectatorCam: Module_F {
         scope = 2;
         displayName = $STR_CORP_SPECTATOR_CAM_DN;
-        icon = "\corp_edition_spectator_cam\icon.paa";
+        icon = "\corp_edition\corp_edition_spectator_cam\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_spectatorCam_init";

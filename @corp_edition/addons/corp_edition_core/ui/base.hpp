@@ -228,7 +228,6 @@ class BaseTreeView {
 };
 
 class BaseMap {
-    access = 0; // Control access (0 - ReadAndWrite, 1 - ReadAndCreate, 2 - ReadOnly, 3 - ReadOnlyVerified)
     idc = -1; // Control identification (without it, the control won't be displayed)
     type = CT_MAP_MAIN; // Type
     style = ST_PICTURE; // Style

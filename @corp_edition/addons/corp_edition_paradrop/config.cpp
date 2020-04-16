@@ -12,7 +12,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionParadrop {
-            file = "\corp_edition_paradrop\functions";
+            file = "\corp_edition\corp_edition_paradrop\functions";
             class Paradrop_Init {};
             class Paradrop_UiStart {};
             class Paradrop_UiStop {};
@@ -32,7 +32,7 @@ class CfgVehicles {
     class CORP_Module_Paradrop: Module_F {
         scope = 2;
         displayName = $STR_CORP_PARADROP_DN;
-        icon = "\corp_edition_paradrop\icon.paa";
+        icon = "\corp_edition\corp_edition_paradrop\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_paradrop_init";

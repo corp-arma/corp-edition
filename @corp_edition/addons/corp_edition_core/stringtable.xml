@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="CORP Edition Addons">
     <Package name="core">
+        <Container name="miscs">
+            <Key ID="STR_CORP_CORE_AUTHOR">
+                <Original>CORP</Original>
+                <French>CORP</French>
+            </Key>
+        </Container>
+
+        <Container name="objects">
+            <Key ID="STR_CORP_CORE_FLAG">
+                <Original>Flag (CORP)</Original>
+                <French>Drapeau (CORP)</French>
+            </Key>
+        </Container>
 
         <Container name="ui">
-
             <Key ID="STR_CORP_CORE_CANCEL">
                 <Original>Cancel</Original>
                 <French>Annuler</French>
@@ -13,11 +25,9 @@
                 <Original>Confirm</Original>
                 <French>Confirmer</French>
             </Key>
-
         </Container>
 
         <Container name="errors">
-
             <Key ID="STR_CORP_CORE_NO_UNIT_SYNCHED">
                 <Original>No unit synched to module</Original>
                 <French>Aucune unité synchronisée au module</French>
@@ -32,7 +42,6 @@
                 <Original>No area synched to module</Original>
                 <French>Aucune zone synchronisée au module</French>
             </Key>
-
         </Container>
     </Package>
 </Project>

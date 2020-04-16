@@ -3,7 +3,12 @@ class CfgPatches {
         units[] = {"CORP_Module_BuildingsOccupation"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_arrays"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "A3_3DEN",
+            "corp_edition_core",
+            "cba_arrays"
+        };
     };
 };
 
@@ -12,7 +17,7 @@ class CfgFunctions {
         tag = "CORP";
 
         class CORPEditionBuildingsOccupation {
-            file = "\corp_edition_buildings_occupation\functions";
+            file = "\corp_edition\corp_edition_buildings_occupation\functions";
             class BuildingsOccupation_Init {};
             class BuildingsOccupation_Occupation {};
             class BuildingsOccupation_getRelPos {};
@@ -59,7 +64,7 @@ class CfgVehicles {
     class CORP_Module_BuildingsOccupation: Module_F {
         scope = 2;
         displayName = $STR_CORP_BUILDINGS_OCCUPATION_DN;
-        icon = "\corp_edition_buildings_occupation\icon.paa";
+        icon = "\corp_edition\corp_edition_buildings_occupation\icon.paa";
         category = "CORP_Modules";
 
         function = "CORP_fnc_buildingsOccupation_init";
