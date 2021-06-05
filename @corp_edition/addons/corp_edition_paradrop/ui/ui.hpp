@@ -11,8 +11,8 @@ class ConfirmButton;
 class CORP_ParaJumpClassicDialog {
     idd = PARADROP_DIALOG_IDD;
 
-    onLoad		= "[] spawn CORP_fnc_paradrop_uiStart;";
-    onUnload	= "[] spawn CORP_fnc_paradrop_uiStop;";
+    onLoad   = "[] spawn CORP_fnc_paradrop_uiStart;";
+    onUnload = "[] spawn CORP_fnc_paradrop_uiStop;";
 
     class ControlsBackground {
         class Title: BaseTitle {

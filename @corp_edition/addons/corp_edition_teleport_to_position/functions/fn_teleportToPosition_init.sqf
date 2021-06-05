@@ -1,12 +1,12 @@
 if (!hasInterface) exitWith {};
 
-private _logic		= param [0, objNull, [objNull]];
-private _objects	= param [1, [], [[]]];
+private _logic   = param [0, objNull, [objNull]];
+private _objects = param [1, [], [[]]];
 
-private _actionDText		= _logic getVariable ["ActionText", "Action"];
-private _actionDistance		= _logic getVariable ["ActionDistance", 3];
-private _teleportPosition	= _logic getVariable ["TeleportPosition", [0, 0, 0]];
-private _teleportDirection	= _logic getVariable ["TeleportDirection", 0];
+private _actionDText       = _logic getVariable ["ActionText", "Action"];
+private _actionDistance    = _logic getVariable ["ActionDistance", 3];
+private _teleportPosition  = _logic getVariable ["TeleportPosition", [0, 0, 0]];
+private _teleportDirection = _logic getVariable ["TeleportDirection", 0];
 
 {
     _x addAction [

@@ -3,8 +3,8 @@
     http://www.corp-arma.fr
 */
 
-private _c130j			= param [0, objNull, [objNull]];
-private _delay			= param [1, 0, [0]];
+private _c130j = param [0, objNull, [objNull]];
+private _delay = param [1, 0, [0]];
 
 sleep _delay;
 

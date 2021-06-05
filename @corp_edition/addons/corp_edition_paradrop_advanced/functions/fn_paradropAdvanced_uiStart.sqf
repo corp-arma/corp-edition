@@ -8,31 +8,31 @@
 // déclaration des variables du module
 // CORP_var_paradropAdvanced_object, déclarée dans le code de l'action afin de récupérer l'objet drapeau et ainsi pouvoir récupérer les joueurs à proximité
 // CORP_var_paradropAdvanced_logic, déclarée dans le code de l'action afin de récupérer la logique du module qui contient les sauts
-CORP_var_paradropAdvanced_skyDivers			= [];
-CORP_var_paradropAdvanced_markers			= [];
-CORP_var_paradropAdvanced_selectedDrop		= [];
-CORP_var_paradropAdvanced_customDropMarker	= "";
+CORP_var_paradropAdvanced_skyDivers        = [];
+CORP_var_paradropAdvanced_markers          = [];
+CORP_var_paradropAdvanced_selectedDrop     = [];
+CORP_var_paradropAdvanced_customDropMarker = "";
 
 waitUntil {!isNull (findDisplay PARADROP_ADVANCED_DIALOG_IDD)};
 
 disableSerialization;
 
-_dialog		= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-_dropList	= _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
-_map 		= _dialog displayCtrl PARADROP_ADVANCED_MAP_IDC;
-_close 		= _dialog displayCtrl PARADROP_ADVANCED_CLOSE_IDC;
-_jump		= _dialog displayCtrl PARADROP_ADVANCED_JUMP_IDC;
+_dialog   = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+_dropList = _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
+_map      = _dialog displayCtrl PARADROP_ADVANCED_MAP_IDC;
+_close    = _dialog displayCtrl PARADROP_ADVANCED_CLOSE_IDC;
+_jump     = _dialog displayCtrl PARADROP_ADVANCED_JUMP_IDC;
 
-_customCtrlsGroup	= _dialog displayCtrl PARADROP_ADVANCED_CUSTOM_DROP_PARAMS_CONTROLS_GROUP_IDC;
-_elevation			= _customCtrlsGroup controlsGroupCtrl PARADROP_ADVANCED_ELEVATION_IDC;
-_bearing			= _customCtrlsGroup controlsGroupCtrl PARADROP_ADVANCED_BEARING_IDC;
+_customCtrlsGroup = _dialog displayCtrl PARADROP_ADVANCED_CUSTOM_DROP_PARAMS_CONTROLS_GROUP_IDC;
+_elevation        = _customCtrlsGroup controlsGroupCtrl PARADROP_ADVANCED_ELEVATION_IDC;
+_bearing          = _customCtrlsGroup controlsGroupCtrl PARADROP_ADVANCED_BEARING_IDC;
 
 // alimentation et actualisation de la liste des parachutistes
 [] spawn {
     disableSerialization;
 
-    _dialog	= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-    _diverList	= _dialog displayCtrl PARADROP_ADVANCED_DIVERLIST_IDC;
+    _dialog = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+    _diverList = _dialog displayCtrl PARADROP_ADVANCED_DIVERLIST_IDC;
 
     while {!isNull (findDisplay PARADROP_ADVANCED_DIALOG_IDD)} do {
         // récupération des joueurs à proximité
@@ -75,8 +75,8 @@ CORP_var_paradropAdvanced_markers pushBack _marker;
 
 // selection du saut depuis la liste de drops
 _dropList ctrlAddEventHandler ["LBSelChanged", {
-    _dialog	= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-    _map	= _dialog displayCtrl PARADROP_ADVANCED_MAP_IDC;
+    _dialog = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+    _map    = _dialog displayCtrl PARADROP_ADVANCED_MAP_IDC;
 
     // récupération de la donnée
     _data = call compile (lbData [PARADROP_ADVANCED_DROPLIST_IDC, _this select 1]);
@@ -95,21 +95,21 @@ _close ctrlAddEventHandler ["MouseButtonDown", {
 
 // gestion du saut
 _jump ctrlAddEventHandler ["MouseButtonDown", {
-    _dialog		= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-    _dropList	= _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
+    _dialog   = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+    _dropList = _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
 
     // si il-y-a bien un saut de selectionné
     if ((lbCurSel _dropList) >= 0) then {
         // les variables globales doivent être passées au thread
         // car en parallèle vient la destruction de celles-ci avec la fermeture du dialog
         [CORP_var_paradropAdvanced_selectedDrop, CORP_var_paradropAdvanced_skyDivers] spawn {
-            _drop			= _this select 0;
-            _divers			= _this select 1;
-            _finalPosition	= _drop select 0;
-            _bearing		= _drop select 1;
-            _elevation		= _finalPosition select 2;
-            _finalPosition	= [_finalPosition, 500, _bearing + 180] call bis_fnc_relPos;
-            _playerPosition	= (getPosASL player) vectorAdd [0, 0, 100];
+            _drop           = _this select 0;
+            _divers         = _this select 1;
+            _finalPosition  = _drop select 0;
+            _bearing        = _drop select 1;
+            _elevation      = _finalPosition select 2;
+            _finalPosition  = [_finalPosition, 500, _bearing + 180] call bis_fnc_relPos;
+            _playerPosition = (getPosASL player) vectorAdd [0, 0, 100];
 
             [_playerPosition, _finalPosition, _bearing] remoteExec ["CORP_fnc_paradropAdvanced_server", 2];
 
@@ -167,9 +167,9 @@ if (CORP_var_paradropAdvanced_logic getVariable "CustomDrop") then {
     // gestion du changement d'altitude du saut
     // en utilisant la molette de la souris
     _elevation ctrlAddEventHandler ["MouseZChanged", {
-        _dialog		= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-        _dropList	= _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
-        _control	= _this select 0;
+        _dialog   = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+        _dropList = _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
+        _control  = _this select 0;
 
         _mouseWheel = [-1, 1] select ((_this select 1) > 0);
 
@@ -197,9 +197,9 @@ if (CORP_var_paradropAdvanced_logic getVariable "CustomDrop") then {
     // gestion du changement de l'azimut de saut
     // en utilisant la molette de la souris
     _bearing ctrlAddEventHandler ["MouseZChanged", {
-        _dialog		= findDisplay PARADROP_ADVANCED_DIALOG_IDD;
-        _dropList	= _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
-        _control	= _this select 0;
+        _dialog   = findDisplay PARADROP_ADVANCED_DIALOG_IDD;
+        _dropList = _dialog displayCtrl PARADROP_ADVANCED_DROPLIST_IDC;
+        _control  = _this select 0;
 
         _mouseWheel = [-1, 1] select ((_this select 1) > 0);
 

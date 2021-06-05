@@ -5,10 +5,10 @@
 
     disableSerialization;
 
-    _dialog		= findDisplay TELEPORT_DIALOG_IDD;
-    _list		= _dialog displayCtrl TELEPORT_LIST_IDC;
-    _close		= _dialog displayCtrl TELEPORT_CLOSE_IDC;
-    _teleport	= _dialog displayCtrl TELEPORT_TELEPORT_IDC;
+    _dialog   = findDisplay TELEPORT_DIALOG_IDD;
+    _list     = _dialog displayCtrl TELEPORT_LIST_IDC;
+    _close    = _dialog displayCtrl TELEPORT_CLOSE_IDC;
+    _teleport = _dialog displayCtrl TELEPORT_TELEPORT_IDC;
 
     {
         lbAdd [TELEPORT_LIST_IDC, name _x];

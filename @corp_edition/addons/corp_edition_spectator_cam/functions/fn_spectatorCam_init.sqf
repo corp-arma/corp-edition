@@ -9,16 +9,16 @@ private _objects = param [1, [], [[]]];
         {
             // création de la caméra spéctateur
             ["Initialize", [
-                player,	// spectator
-                [],		// WhitelistedSides
-                true,	// allowAi
-                true,	// allowFreeCamera
-                true,	// allow3PPCamera
-                true,	// showFocusInfo
-                true,	// showCameraButtons
-                true,	// showControlsHelper
-                true,	// showHeader
-                true 	// showLists
+                player, // spectator
+                [],     // WhitelistedSides
+                true,   // allowAi
+                true,   // allowFreeCamera
+                true,   // allow3PPCamera
+                true,   // showFocusInfo
+                true,   // showCameraButtons
+                true,   // showControlsHelper
+                true,   // showHeader
+                true    // showLists
             ]] spawn BIS_fnc_EGSpectator;
 
             // on attend que le dialog de la caméra existe

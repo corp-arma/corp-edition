@@ -3,11 +3,11 @@
     http://www.corp-arma.fr
 */
 
-private _logic		= param [0, objNull, [objNull]];
-private _objects	= param [1, [], [[]]];
+private _logic   = param [0, objNull, [objNull]];
+private _objects = param [1, [], [[]]];
 
-private _actions	= [];
-private _planes 	= [];
+private _actions = [];
+private _planes  = [];
 
 {
     if (typeOf _x == "C130J_static_EP1") then {

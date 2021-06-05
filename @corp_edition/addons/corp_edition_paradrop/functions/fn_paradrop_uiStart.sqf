@@ -7,28 +7,28 @@
 
 // déclaration des variables du module
 // CORP_var_paraJumpClassic_flag, déclarée dans le code de l'action afin de récupérer l'objet drapeau et ainsi pouvoir récupérer les joueurs à proximité
-CORP_var_paraJumpClassic_skyDivers	= [];
+CORP_var_paraJumpClassic_skyDivers   = [];
 CORP_var_paraJumpClassic_coordinates = [];
-CORP_var_paraJumpClassic_marker		= "";
-CORP_var_paraJumpClassic_elevation	= "5000";
+CORP_var_paraJumpClassic_marker      = "";
+CORP_var_paraJumpClassic_elevation   = "5000";
 
 [] spawn {
     waitUntil {!isNull (findDisplay PARADROP_DIALOG_IDD)};
 
     disableSerialization;
 
-    _dialog		= findDisplay PARADROP_DIALOG_IDD;
-    _altitude	= _dialog displayCtrl PARADROP_ALTITUDE_IDC;
-    _map 		= _dialog displayCtrl PARADROP_MAP_IDC;
-    _close 		= _dialog displayCtrl PARADROP_CLOSE_IDC;
-    _jump		= _dialog displayCtrl PARADROP_JUMP_IDC;
+    _dialog   = findDisplay PARADROP_DIALOG_IDD;
+    _altitude = _dialog displayCtrl PARADROP_ALTITUDE_IDC;
+    _map      = _dialog displayCtrl PARADROP_MAP_IDC;
+    _close    = _dialog displayCtrl PARADROP_CLOSE_IDC;
+    _jump     = _dialog displayCtrl PARADROP_JUMP_IDC;
 
     // alimentation et actualisation de la liste
     [] spawn {
         disableSerialization;
 
-        _dialog	= findDisplay PARADROP_DIALOG_IDD;
-        _list	= _dialog displayCtrl PARADROP_LIST_IDC;
+        _dialog = findDisplay PARADROP_DIALOG_IDD;
+        _list   = _dialog displayCtrl PARADROP_LIST_IDC;
 
         while {!isNull (findDisplay PARADROP_DIALOG_IDD)} do {
             // récupération des joueurs à proximité
@@ -50,9 +50,9 @@ CORP_var_paraJumpClassic_elevation	= "5000";
     // gestion du changement d'altitude du saut
     // en utilisant la molette de la souris
     _altitude ctrlAddEventHandler ["MouseZChanged", {
-        _mouseWheel	= [-1, 1] select ((_this select 1) > 0);
-        _definition	= parseNumber (ctrlText PARADROP_ALTITUDE_IDC);
-        _definition	= _definition + _mouseWheel * 100;
+        _mouseWheel = [-1, 1] select ((_this select 1) > 0);
+        _definition = parseNumber (ctrlText PARADROP_ALTITUDE_IDC);
+        _definition = _definition + _mouseWheel * 100;
 
         CORP_var_paraJumpClassic_elevation = str _definition;
         ctrlSetText [PARADROP_ALTITUDE_IDC, str _definition];
@@ -62,8 +62,8 @@ CORP_var_paraJumpClassic_elevation	= "5000";
     _altitude ctrlAddEventHandler ["KeyDown", {
         _elevation = ctrlText PARADROP_ALTITUDE_IDC;
         _elevation = toArray _elevation;
-        _filter = toArray "0123456789";
-        _iterate = true;
+        _filter    = toArray "0123456789";
+        _iterate   = true;
 
         // on boucle sur la chaîne du champs convertie en tableau
         // tant que l'on a pas trouvé de caractère interdit

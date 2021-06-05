@@ -18,8 +18,8 @@ class RscText;
 class CORP_ParadropAdvancedDialog {
     idd = PARADROP_ADVANCED_DIALOG_IDD;
 
-    onLoad		= "[] spawn CORP_fnc_paradropAdvanced_uiStart;";
-    onUnload	= "[] spawn CORP_fnc_paradropAdvanced_uiStop;";
+    onLoad   = "[] spawn CORP_fnc_paradropAdvanced_uiStart;";
+    onUnload = "[] spawn CORP_fnc_paradropAdvanced_uiStop;";
 
     class ControlsBackground {
         class Title: BaseTitle {
